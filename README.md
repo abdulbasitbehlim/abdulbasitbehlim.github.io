@@ -8,7 +8,7 @@ Modern single-page portfolio / resume website.
 ## Contents
 
 - About
-- Education (Gujarat Biotechnology University + CUET PG)
+- Education (Gujarat Biotechnology University)
 - Skills & Tech Stack
 - Featured Projects (from GitHub)
 - Current Focus / Learning
