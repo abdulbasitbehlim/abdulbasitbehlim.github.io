@@ -4,8 +4,6 @@ Modern single-page portfolio / resume website.
 
 **Live URL (after you enable GitHub Pages):**  
 `https://abdulbasitbehlim.github.io/`  
-or  
-`https://abdulbasitbehlim.github.io/portfolio/` (if you name the repo `portfolio`)
 
 ## Contents
 
