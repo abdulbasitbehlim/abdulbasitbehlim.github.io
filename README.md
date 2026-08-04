@@ -2,7 +2,7 @@
 
 Modern single-page portfolio / resume website.
 
-**Live URL (after you enable GitHub Pages):**  
+**Live URL:**  
 `https://abdulbasitbehlim.github.io/`  
 
 ## Contents
