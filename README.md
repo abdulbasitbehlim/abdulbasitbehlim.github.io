@@ -13,7 +13,3 @@ Modern single-page portfolio / resume website.
 - Featured Projects (from GitHub)
 - Current Focus / Learning
 - Contact & Social links
-
-## How to update
-
-Edit `index.html` and push changes. GitHub Pages will update automatically (usually within 1–2 minutes).
