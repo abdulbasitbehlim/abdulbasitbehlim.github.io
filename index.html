@@ -186,6 +186,18 @@
       color: var(--text); font-weight: 500; font-size: 0.9rem; transition: all 0.2s;
     }
     .social-btn:hover { border-color: var(--primary); color: var(--primary); }
+    .social-btn.github {
+      background: #181717; border-color: #181717; color: #fff;
+    }
+    .social-btn.github:hover {
+      background: #2d2d2d; border-color: #2d2d2d; color: #fff;
+    }
+    .social-btn.linkedin {
+      background: #0A66C2; border-color: #0A66C2; color: #fff;
+    }
+    .social-btn.linkedin:hover {
+      background: #004182; border-color: #004182; color: #fff;
+    }
     footer {
       padding: 2rem 0; border-top: 1px solid var(--border);
       text-align: center; color: var(--text-muted); font-size: 0.85rem;
@@ -469,7 +481,7 @@
           <div class="project-tech">
             <span class="tag">Python</span><span class="tag">Streamlit</span><span class="tag">Bioinformatics</span>
           </div>
-          <a class="project-link" href="https://github.com/abdulbasitbehlim/CRISPR-sgRNA-Designer" target="_blank" rel="noopener">View on GitHub →</a>
+          <a class="project-link" href="https://github.com/abdulbasitbehlim/CRISPR-gRNA-Designer" target="_blank" rel="noopener">View on GitHub →</a>
         </article>
 
         <!-- Structure-based In Silico Study of Human β-Cardiac Myosin Inhibitors - SECOND -->
@@ -532,7 +544,7 @@
           <h3>File &amp; Folder Manager OS</h3>
           <p>Simple interactive command-line File &amp; Folder Manager written in pure Python — practical systems utility.</p>
           <div class="project-tech"><span class="tag">Python</span><span class="tag">CLI</span><span class="tag">OS</span></div>
-          <a class="project-link" href="https://github.com/abdulbasitbehlim/File_Folder_Handling_OS" target="_blank" rel="noopener">View on GitHub →</a>
+          <a class="project-link" href="https://github.com/abdulbasitbehlim/File-Folder-Handling-OS" target="_blank" rel="noopener">View on GitHub →</a>
         </article>
 
         <!-- Number Guessing Game -->
@@ -595,8 +607,8 @@
           data science, bioinformatics or computational drug design? Reach out below.
         </p>
         <div class="social-links">
-          <a class="social-btn" href="https://github.com/abdulbasitbehlim" target="_blank" rel="noopener">GitHub</a>
-          <a class="social-btn" href="https://www.linkedin.com/in/abdulbasitbehlim" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="social-btn github" href="https://github.com/abdulbasitbehlim" target="_blank" rel="noopener">GitHub</a>
+          <a class="social-btn linkedin" href="https://www.linkedin.com/in/abdulbasitbehlim" target="_blank" rel="noopener">LinkedIn</a>
         </div>
       </div>
     </div>
@@ -609,12 +621,11 @@
   </footer>
 
   <script>
-    // Typing animation for hero title
+    // Typing animation for hero title — name uses the same gradient as the logo
     const typingText = document.getElementById('typing-text');
     const text = "Hi, I'm ";
     const nameText = "Abdul Basit Behlim";
     let i = 0;
-    let isName = false;
 
     function type() {
       if (i < text.length) {
@@ -622,20 +633,14 @@
         i++;
         setTimeout(type, 80);
       } else {
-        // Now type the name
-        isName = true;
         i = 0;
         function typeName() {
           if (i < nameText.length) {
-            typingText.innerHTML = text + nameText.substring(0, i) + '_';
+            typingText.innerHTML = text + '<span>' + nameText.substring(0, i) + '</span>_';
             i++;
             setTimeout(typeName, 80);
           } else {
-            typingText.innerHTML = text + nameText;
-            // Optional: cursor blink effect after typing finishes
-            const cursor = document.createElement('span');
-            cursor.className = 'cursor';
-            typingText.appendChild(cursor);
+            typingText.innerHTML = text + '<span>' + nameText + '</span>';
           }
         }
         typeName();
