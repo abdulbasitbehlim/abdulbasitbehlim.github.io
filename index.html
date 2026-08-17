@@ -156,7 +156,7 @@
     .project-card:hover { border-color: var(--primary-dim); transform: translateY(-3px); }
     .project-card h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
     .project-card p { color: var(--text-muted); font-size: 0.9rem; flex: 1; margin-bottom: 1rem; }
-    .project-tech { display: flex; flex-wrap: gap: 0.4rem; margin-bottom: 1rem; }
+    .project-tech { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem; }
     .project-link { font-size: 0.9rem; font-weight: 500; display: inline-flex; align-items: center; gap: 0.35rem; }
     .focus-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; }
     .focus-card {
@@ -240,7 +240,7 @@
       <p class="tagline">Data Scientist · Computational Biology · Bioinformatics</p>
       <p class="location">📍 Gandhinagar, Gujarat · M.Sc. Industrial Biotechnology @ GBU · Research @ IIT Roorkee</p>
       <div class="hero-cta">
-        <a href="https://abdulbasitbehlim.github.io/" class="btn btn-primary" target="_blank" rel="noopener">View GitHub →</a>
+        <a href="https://github.com/abdulbasitbehlim" class="btn btn-primary" target="_blank" rel="noopener">View GitHub →</a>
         <a href="https://www.linkedin.com/in/abdulbasitbehlim" class="btn btn-outline" target="_blank" rel="noopener">LinkedIn</a>
         <a href="#experience" class="btn btn-outline">Experience</a>
       </div>
@@ -472,6 +472,7 @@
       <h2 class="section-title">Featured Projects</h2>
       <p class="section-subtitle">Selected work from research &amp; GitHub</p>
       <div class="projects-grid">
+        <!-- CRISPR sgRNA Designer - FIRST -->
         <article class="project-card">
           <h3>CRISPR sgRNA Designer</h3>
           <p>
@@ -482,6 +483,8 @@
           </div>
           <a class="project-link" href="https://github.com/abdulbasitbehlim/CRISPR-gRNA-Designer" target="_blank" rel="noopener">View on GitHub →</a>
         </article>
+
+        <!-- Structure-based In Silico Study of Human β-Cardiac Myosin Inhibitors - SECOND -->
         <article class="project-card">
           <h3>Structure-based In Silico Study of Human β-Cardiac Myosin Inhibitors</h3>
           <p>
@@ -496,6 +499,8 @@
             <span class="tag">MD Simulation</span>
           </div>
         </article>
+
+        <!-- AMS Venom Diagnostic Dashboard -->
         <article class="project-card">
           <h3>AMS Venom Diagnostic Dashboard</h3>
           <p>
@@ -506,6 +511,8 @@
           </div>
           <a class="project-link" href="https://github.com/abdulbasitbehlim/AMS-Venom-Diagnostic-Dashboard" target="_blank" rel="noopener">View on GitHub →</a>
         </article>
+
+        <!-- Jarvis AI Assistant -->
         <article class="project-card">
           <h3>Jarvis AI Assistant</h3>
           <p>Voice-controlled AI assistant inspired by Jarvis. Uses OpenAI and Speech Recognition for natural interaction and task assistance.</p>
@@ -514,6 +521,8 @@
           </div>
           <a class="project-link" href="https://github.com/abdulbasitbehlim/Jarvis-AI-Assistant" target="_blank" rel="noopener">View on GitHub →</a>
         </article>
+
+        <!-- ABB Bank -->
         <article class="project-card">
           <h3>ABB Bank</h3>
           <p>
@@ -529,18 +538,24 @@
           </div>
           <a class="project-link" href="https://github.com/abdulbasitbehlim/ABB-Bank" target="_blank" rel="noopener">View on GitHub →</a>
         </article>
+
+        <!-- File &amp; Folder Manager OS -->
         <article class="project-card">
           <h3>File &amp; Folder Manager OS</h3>
           <p>Simple interactive command-line File &amp; Folder Manager written in pure Python — practical systems utility.</p>
           <div class="project-tech"><span class="tag">Python</span><span class="tag">CLI</span><span class="tag">OS</span></div>
           <a class="project-link" href="https://github.com/abdulbasitbehlim/File-Folder-Handling-OS" target="_blank" rel="noopener">View on GitHub →</a>
         </article>
+
+        <!-- Number Guessing Game -->
         <article class="project-card">
           <h3>Number Guessing Game</h3>
           <p>Fun number guessing game with hints. Clean, beginner-friendly Python project.</p>
           <div class="project-tech"><span class="tag">Python</span></div>
           <a class="project-link" href="https://github.com/abdulbasitbehlim/Number-Guessing-Game" target="_blank" rel="noopener">View on GitHub →</a>
         </article>
+
+        <!-- Rock Paper Scissors &amp; Snake Water Gun -->
         <article class="project-card">
           <h3>Rock Paper Scissors &amp; Snake Water Gun</h3>
           <p>Classic command-line games implemented in Python (including the Indian version Snake-Water-Gun).</p>
@@ -606,6 +621,7 @@
   </footer>
 
   <script>
+    // Typing animation for hero title — name uses the same gradient as the logo
     const typingText = document.getElementById('typing-text');
     const text = "Hi, I'm ";
     const nameText = "Abdul Basit Behlim";
@@ -630,8 +646,11 @@
         typeName();
       }
     }
+
+    // Start typing animation
     type();
 
+    // Menu toggle
     const toggle = document.getElementById('menuToggle');
     const links = document.getElementById('navLinks');
     toggle.addEventListener('click', () => links.classList.toggle('open'));
