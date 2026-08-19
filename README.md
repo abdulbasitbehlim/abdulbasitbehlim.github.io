@@ -9,6 +9,7 @@ Modern single-page portfolio / resume website.
 
 - About
 - Education (Gujarat Biotechnology University)
+- Honours and Awards
 - Skills & Tech Stack
 - Featured Projects (from GitHub)
 - Current Focus / Learning
