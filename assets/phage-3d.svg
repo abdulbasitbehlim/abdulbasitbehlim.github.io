@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 700" role="img" aria-labelledby="title desc">
+<title id="title">Stylized 3D bacteriophage</title><desc id="desc">Original futuristic bacteriophage illustration with faceted capsid, tail sheath, baseplate and tail fibres.</desc>
+<defs>
+  <linearGradient id="head" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#b9edff"/><stop offset=".32" stop-color="#5cc8ff"/><stop offset=".7" stop-color="#2f7fe4"/><stop offset="1" stop-color="#183a84"/></linearGradient>
+  <linearGradient id="face" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#9ee7ff" stop-opacity=".95"/><stop offset="1" stop-color="#3765d8" stop-opacity=".75"/></linearGradient>
+  <linearGradient id="tail" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#72e7ff"/><stop offset=".5" stop-color="#377fe9"/><stop offset="1" stop-color="#8a7cff"/></linearGradient>
+  <radialGradient id="halo"><stop stop-color="#4fb9ff" stop-opacity=".26"/><stop offset="1" stop-color="#4fb9ff" stop-opacity="0"/></radialGradient>
+  <filter id="glow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <filter id="shadow" x="-60%" y="-60%" width="220%" height="220%"><feDropShadow dx="0" dy="24" stdDeviation="18" flood-color="#000" flood-opacity=".6"/></filter>
+</defs>
+<circle cx="350" cy="330" r="260" fill="url(#halo)"/>
+<g filter="url(#shadow)">
+  <g transform="translate(0 -28)">
+    <polygon points="350,100 455,160 476,273 350,329 224,273 245,160" fill="url(#head)" stroke="#a9eaff" stroke-opacity=".62" stroke-width="3"/>
+    <polygon points="350,100 455,160 350,210 245,160" fill="#c8f4ff" opacity=".46"/>
+    <polygon points="245,160 350,210 350,329 224,273" fill="#3a83e5" opacity=".46"/>
+    <polygon points="455,160 350,210 350,329 476,273" fill="#193f9b" opacity=".48"/>
+    <polygon points="245,160 350,210 224,273" fill="url(#face)" opacity=".62"/>
+    <path d="M296 191 C327 157 385 158 414 193 C437 221 424 259 390 271 C355 284 329 251 301 261 C277 270 267 226 296 191Z" fill="none" stroke="#d9f7ff" stroke-width="8" opacity=".48"/>
+  </g>
+  <g transform="translate(0 6)">
+    <rect x="319" y="293" width="62" height="44" rx="18" fill="#91dcff" opacity=".9"/>
+    <path d="M317 327 L383 327 L398 495 L302 495 Z" fill="#0d1f45" stroke="#65d7ff" stroke-width="3"/>
+    <g fill="none" stroke="url(#tail)" stroke-width="12" stroke-linecap="round">
+      <path d="M312 349 H388"/><path d="M309 376 H391"/><path d="M307 403 H393"/><path d="M305 430 H395"/><path d="M303 457 H397"/><path d="M302 484 H398"/>
+    </g>
+    <polygon points="288,495 412,495 447,529 350,559 253,529" fill="#3f91e8" stroke="#9fe8ff" stroke-opacity=".65" stroke-width="3"/>
+    <circle cx="350" cy="529" r="19" fill="#92ebff" opacity=".95" filter="url(#glow)"/>
+    <g fill="none" stroke="url(#tail)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M284 520 L197 574 L128 641"/><path d="M309 540 L246 603 L225 666"/><path d="M416 520 L503 574 L572 641"/><path d="M391 540 L454 603 L475 666"/>
+      <path d="M270 508 L205 523 L163 567"/><path d="M430 508 L495 523 L537 567"/>
+    </g>
+  </g>
+</g>
+<ellipse cx="350" cy="663" rx="220" ry="24" fill="#57c9ff" opacity=".08" filter="url(#glow)"/>
+</svg>

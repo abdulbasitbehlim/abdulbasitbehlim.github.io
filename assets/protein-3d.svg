@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 700" role="img" aria-labelledby="title desc">
+<title id="title">Stylized 3D protein ribbon</title><desc id="desc">Original abstract ribbon-like protein structure rendered with luminous molecular gradients.</desc>
+<defs>
+  <radialGradient id="bg" cx="50%" cy="45%" r="60%"><stop offset="0" stop-color="#11345a" stop-opacity=".28"/><stop offset="1" stop-color="#07101f" stop-opacity="0"/></radialGradient>
+  <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#7dd3fc"/><stop offset=".5" stop-color="#4da3ff"/><stop offset="1" stop-color="#6ee7f9"/></linearGradient>
+  <linearGradient id="g2" x1="1" y1="0" x2="0" y2="1"><stop stop-color="#c084fc"/><stop offset=".55" stop-color="#60a5fa"/><stop offset="1" stop-color="#22d3ee"/></linearGradient>
+  <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="10" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%"><feDropShadow dx="0" dy="24" stdDeviation="18" flood-color="#000" flood-opacity=".55"/></filter>
+</defs>
+<rect width="700" height="700" fill="url(#bg)"/>
+<g filter="url(#shadow)" transform="translate(8 4)">
+  <path d="M164 354 C118 276 177 193 269 207 C349 219 367 289 319 336 C276 378 197 357 176 411 C155 465 220 528 296 491 C365 457 376 369 433 341 C495 311 577 355 570 426 C562 508 462 541 405 493" fill="none" stroke="url(#g1)" stroke-width="38" stroke-linecap="round" stroke-linejoin="round" opacity=".95"/>
+  <path d="M235 168 C303 111 393 139 404 214 C414 285 332 308 335 370 C338 429 414 459 465 420 C521 376 494 291 429 279 C366 267 322 332 261 321 C190 307 164 222 235 168Z" fill="none" stroke="url(#g2)" stroke-width="26" stroke-linecap="round" stroke-linejoin="round" opacity=".92"/>
+  <path d="M238 469 C291 547 406 570 468 500" fill="none" stroke="url(#g1)" stroke-width="22" stroke-linecap="round"/>
+  <path d="M183 276 C238 236 282 239 331 273" fill="none" stroke="#d7f4ff" stroke-width="7" stroke-linecap="round" opacity=".72"/>
+  <g fill="#9be7ff" filter="url(#glow)">
+    <circle cx="164" cy="354" r="9"/><circle cx="269" cy="207" r="7"/><circle cx="319" cy="336" r="8"/><circle cx="433" cy="341" r="9"/><circle cx="570" cy="426" r="8"/>
+  </g>
+  <g fill="#d8b4fe" opacity=".9"><circle cx="235" cy="168" r="7"/><circle cx="404" cy="214" r="7"/><circle cx="335" cy="370" r="8"/><circle cx="465" cy="420" r="7"/></g>
+</g>
+<ellipse cx="350" cy="590" rx="190" ry="28" fill="#49a8ff" opacity=".08" filter="url(#glow)"/>
+</svg>
