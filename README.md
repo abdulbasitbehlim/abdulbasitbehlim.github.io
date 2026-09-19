@@ -4,14 +4,6 @@ Personal research portfolio hosted with GitHub Pages.
 
 **Live website:** https://abdulbasitbehlim.github.io/
 
-## Current design
-
-- Cinematic blue-black dark theme
-- Bright blue-and-white light theme
-- Persistent light/dark mode toggle
-- Responsive desktop, tablet and mobile layout
-- Portfolio sections for projects, research, background, journey and contact
-
 ## Website structure
 
 - `index.html` — page content and project links
@@ -24,4 +16,4 @@ Personal research portfolio hosted with GitHub Pages.
 - `assets/protein-transparent.png` — structural-biology artwork
 - `.nojekyll` — static GitHub Pages configuration
 
-Preview-only files are intentionally not included in the published repository.
+
