@@ -1,0 +1,21 @@
+.project-featured{grid-column:auto;display:flex}
+.project-featured .project-visual{min-height:260px;border-right:0;border-bottom:1px solid var(--line)}
+.project-visual{height:230px}
+.research-grid{grid-template-columns:1fr;gap:24px}
+.research-card,.research-card:first-child{padding:0 0 24px;border-left:0;border-bottom:1px solid var(--line)}
+.about-grid,.cv-grid,.toolkit-layout{grid-template-columns:1fr;gap:35px}
+.recognition-grid{grid-template-columns:1fr}
+.recognition-card{border-right:0;border-bottom:1px solid var(--line)}
+.award-row{grid-template-columns:1fr 20px}
+.award-row>.eyebrow{grid-column:1}
+.timeline li{grid-template-columns:68px 1fr;gap:12px}
+.contact-mark{font-size:160px}
+.footer-inner{flex-wrap:wrap;padding:22px 0;gap:8px}
+.footer-inner>span{display:none}
+}
+
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}
+*,*:before,*:after{animation:none!important;transition:none!important}
+.js .reveal-pending{opacity:1;transform:none}
+}
+

@@ -1,0 +1,27 @@
+.main-nav a:after{content:'';height:2px;width:0;position:absolute;left:0;bottom:3px;background:var(--blue);transition:.25s}
+.main-nav a[aria-current]:after{width:16px}
+.header-contact,.button{border:1px solid var(--line);border-radius:5px;padding:11px 17px;font-size:11px;font-weight:600}
+.header-contact:hover{border-color:var(--blue);color:var(--blue)}
+.theme-toggle{display:inline-flex;align-items:center;gap:8px;padding:7px 9px;border:1px solid var(--line);border-radius:999px;background:var(--surface);cursor:pointer}
+.theme-toggle-track{display:block;width:34px;height:20px;padding:2px;border:1px solid var(--line);border-radius:999px}
+.theme-toggle-knob{display:grid;place-items:center;width:14px;height:14px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--cyan));transition:.3s}
+.theme-toggle-knob span{font-size:9px;color:#fff;line-height:1}
+html[data-theme=light] .theme-toggle-knob{transform:translateX(14px)}
+.theme-toggle-label{font-size:10px;font-weight:600;color:var(--muted)}
+.menu-button{display:none;background:none;border:0}
+.hero{position:relative;overflow:hidden}
+.hero:before{content:'';position:absolute;width:700px;height:700px;right:-180px;top:-160px;background:radial-gradient(circle,var(--glow),transparent 66%);pointer-events:none}
+.hero-layout{min-height:735px;padding:55px 0 85px;display:grid;grid-template-columns:1.08fr 1fr;align-items:center}
+.hero-copy{z-index:2}
+.hero-eyebrow{margin-bottom:24px}
+.status-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 16px var(--cyan);margin-right:8px}
+.hero h1{font:400 clamp(58px,6.5vw,94px)/1.03 var(--sans);letter-spacing:-.065em}
+.hero h1 em{font-size:1.2em;letter-spacing:-.02em}
+.hero-intro{max-width:450px;color:var(--muted);font-size:14px;line-height:1.95;margin-top:28px}
+.hero-intro strong{color:var(--ink)}
+.hero-actions{display:flex;gap:24px;align-items:center;margin-top:30px}
+.button-primary{display:inline-flex;align-items:center;gap:30px;color:#fff;background:linear-gradient(135deg,var(--blue),var(--cyan));border-color:var(--blue);box-shadow:0 12px 34px var(--glow)}
+.button-primary:hover{transform:translateY(-2px)}
+.quiet-link,.text-link{display:inline-flex;align-items:center;gap:12px;font-size:11px;color:var(--muted)}
+.quiet-link:hover,.text-link:hover{color:var(--blue)}
+.hero-art{position:relative;min-height:550px}
