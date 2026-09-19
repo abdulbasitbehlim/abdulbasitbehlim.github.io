@@ -1,21 +1,31 @@
-.project-featured{grid-column:auto;display:flex}
-.project-featured .project-visual{min-height:260px;border-right:0;border-bottom:1px solid var(--line)}
-.project-visual{height:230px}
-.research-grid{grid-template-columns:1fr;gap:24px}
-.research-card,.research-card:first-child{padding:0 0 24px;border-left:0;border-bottom:1px solid var(--line)}
-.about-grid,.cv-grid,.toolkit-layout{grid-template-columns:1fr;gap:35px}
-.recognition-grid{grid-template-columns:1fr}
-.recognition-card{border-right:0;border-bottom:1px solid var(--line)}
-.award-row{grid-template-columns:1fr 20px}
-.award-row>.eyebrow{grid-column:1}
-.timeline li{grid-template-columns:68px 1fr;gap:12px}
-.contact-mark{font-size:160px}
-.footer-inner{flex-wrap:wrap;padding:22px 0;gap:8px}
-.footer-inner>span{display:none}
-}
+@media(max-width:360px){.shell{width:calc(100% - 32px)}.hero h1{font-size:48px}.hero-eyebrow{font-size:6px}.hero-actions{gap:12px}.hero-actions .quiet-link{font-size:8px;max-width:108px}.hero-art{height:325px}.intro-band-inner>p{font-size:17px}.band-item strong{font-size:21px}.project-body,.project-featured .project-body{padding:22px}.project-body h3,.project-featured h3{font-size:22px}.social-row{gap:22px}.contact-content h2{font-size:29px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.js .reveal-pending{opacity:1;transform:none}.project-card:hover,.button-primary:hover{transform:none}}
 
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}
-*,*:before,*:after{animation:none!important;transition:none!important}
-.js .reveal-pending{opacity:1;transform:none}
-}
+/* Blue-black theme controls */
+html{background:var(--bg)}
+body,.site-header,.intro-band,.project-card,.project-visual,.research-section,.journey-section,.recognition-card,.contact-section,.site-footer,.main-nav{transition:background-color .35s ease,color .35s ease,border-color .35s ease,box-shadow .35s ease}
+.theme-toggle{display:inline-flex;align-items:center;gap:9px;padding:8px 10px 8px 8px;border:1px solid var(--line-strong);border-radius:999px;background:color-mix(in srgb,var(--surface) 76%,transparent);color:var(--muted);font-size:10px;font-weight:600;letter-spacing:.03em;white-space:nowrap;transition:border-color .2s,background .2s,color .2s,transform .2s}
+.theme-toggle:hover{border-color:var(--accent);color:var(--ink);background:var(--surface-raised);transform:translateY(-1px)}
+.theme-toggle-track{width:34px;height:20px;padding:2px;border:1px solid var(--line);border-radius:999px;background:var(--surface-raised);display:block;position:relative}
+.theme-toggle-knob{width:14px;height:14px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent),var(--accent-2));box-shadow:0 0 18px var(--accent-glow);transform:translateX(0);transition:transform .3s ease}
+html[data-theme=light] .theme-toggle-knob{transform:translateX(14px)}
+.theme-toggle-knob span{font-size:9px;line-height:1;color:white;transform:translateY(-.5px)}
+html[data-theme=light] body::after{opacity:.018}
+html[data-theme=light] .hero-helix{filter:saturate(1.08) contrast(.95);opacity:.92}
+html[data-theme=dark] .hero-helix{filter:saturate(1.18) drop-shadow(0 22px 42px rgba(15,92,255,.11));opacity:.96}
+.hero::before{content:'';position:absolute;width:520px;height:520px;left:-290px;bottom:-250px;background:radial-gradient(circle,var(--visual-glow),transparent 66%);pointer-events:none}
+.project-card{box-shadow:0 18px 50px rgba(0,0,0,.06)}
+html[data-theme=dark] .project-card{box-shadow:0 18px 55px rgba(0,0,0,.18)}
+html[data-theme=dark] .button-primary{box-shadow:0 10px 30px rgba(30,111,255,.2)}
+html[data-theme=light] .project-card:hover{box-shadow:0 20px 50px rgba(19,72,145,.12)}
+html[data-theme=light] .visual-top>span:first-child,html[data-theme=light] .art-caption{color:#3d5879}
+html[data-theme=light] .plant-art svg{filter:saturate(1.08) contrast(.92)}
+@media(max-width:1100px){.theme-toggle-label{display:none}.theme-toggle{padding-right:8px}}
+@media(max-width:800px){.theme-toggle{position:absolute;right:59px;top:19px;margin:0;z-index:2}.brand,.menu-button{margin-block:19px}.menu-button{margin-left:auto}.main-nav{background:var(--bg)}}
+@media(max-width:420px){.theme-toggle{right:51px}.theme-toggle-track{width:32px}.theme-toggle-knob{width:14px}html[data-theme=light] .theme-toggle-knob{transform:translateX(12px)}}
+@media print{body{background:white;color:#111;font-size:11px}body::after,.site-header,.hero-art,.hero-bottom,.hero-glow,.project-visual,.project-filters,.project-count,.motion-toggle,.copy-email,.contact-mark,.scroll-progress,.skip-link{display:none!important}.shell{width:100%}.section{padding:25px 0;background:white;border-color:#ccc}.hero-layout{min-height:0;display:block;padding:20px 0}.hero h1{font-size:52px}.hero-intro,.section-intro,.project-body>p,.research-card>p,.about-copy>p,.cv-entry>p,.toolkit-list p,.award-row p,.recognition-card p{color:#333!important}.project-grid{display:block}.project-card{display:block;border-color:#ccc;margin-bottom:15px;break-inside:avoid;background:white}.project-body{padding:15px}.project-links a{color:#111}.intro-band{background:white}.hero h1 em,h2 em,blockquote,.eyebrow,.text-link span{color:#6b432a!important}.reveal,.js .reveal-pending{opacity:1!important;transform:none!important}.contact-section,.site-footer{background:white}.contact-content h2{font-size:35px}.contact-content>p{color:#333!important}.tags li{color:#333;border-color:#ccc}.button{background:white;color:#111;border-color:#555}.footer-inner{min-height:50px;color:#555}.research-grid{gap:20px}.about-grid,.cv-grid,.toolkit-layout{gap:30px}.recognition-card{background:white;border-color:#ccc}.social-row{margin-top:20px}}
 
+/* Keep the last research feature balanced with the first featured project. */
+.project-featured .molecule-art img{width:245px;height:265px}
+html:not(.js) .menu-button{display:none}
+@media(max-width:600px){.project-featured .molecule-art img{width:180px;height:195px}}
