@@ -1,4 +1,4 @@
-# Abdul Basit Behlim — Research Portfolio
+# Abdul Basit Behlim - Research Portfolio
 
 Personal research portfolio hosted with GitHub Pages.
 
