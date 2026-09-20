@@ -13,16 +13,19 @@ conditions:
 The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
 
-This license applies to original portfolio website code such as HTML, CSS, and
-JavaScript authored for this repository. It does not apply to portfolio text,
-research/project descriptions, personal or academic information, photographs,
-logos, branding, original illustrations, or third-party materials. Those items
-are governed by CONTENT-LICENSE.md or their respective third-party terms.
+This license applies only to the original portfolio website source code,
+including HTML, CSS, JavaScript, and related code authored for this repository
+by Abdul Basit Behlim.
+
+It does not apply to the portfolio's written content, research/project
+descriptions, personal or academic information, photographs, logos, branding,
+illustrations, figures, diagrams, or other non-code creative material. Those
+materials are governed by CONTENT-LICENSE.md.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+AUTHOR OR COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
