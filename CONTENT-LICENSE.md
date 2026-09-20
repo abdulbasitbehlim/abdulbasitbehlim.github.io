@@ -2,10 +2,10 @@
 
 Copyright © 2026 Abdul Basit Behlim. All rights reserved.
 
-Unless a file or section explicitly states otherwise, the non-code content of
-this portfolio is not released under the MIT License.
+All non-code content in this portfolio repository was created and authored by
+Abdul Basit Behlim and is protected as original portfolio material.
 
-This includes, where applicable:
+This includes:
 
 - written portfolio copy and research/project descriptions;
 - biography, CV-style information, academic history, awards and personal details;
@@ -13,14 +13,13 @@ This includes, where applicable:
 - names, logos, branding, project identity and presentation materials;
 - original research summaries, figures, diagrams and explanatory material.
 
+The non-code content of this portfolio is not released under the MIT License.
+
 You may link to this public portfolio and quote brief portions with appropriate
 attribution where permitted by applicable law. Reproduction, redistribution,
 adaptation, republication, or commercial use of substantial portfolio content
-requires prior permission from Abdul Basit Behlim unless a specific item carries
-a different license.
-
-Third-party names, trademarks, software, datasets, images, fonts, and other
-materials remain subject to their respective owners' terms.
+requires prior permission from Abdul Basit Behlim unless a specific item is
+explicitly released under different terms.
 
 For permission requests, contact the repository owner through:
 https://github.com/abdulbasitbehlim
