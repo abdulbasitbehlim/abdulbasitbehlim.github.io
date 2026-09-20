@@ -2,22 +2,24 @@ Portfolio Licensing Notice
 
 Copyright (c) 2026 Abdul Basit Behlim
 
-This repository contains two categories of material with different reuse terms.
+All source code, written content, research and project descriptions, biographical
+and academic information, visual identity, branding, original illustrations,
+graphics, photographs, and other portfolio material contained in this repository
+were created and authored by Abdul Basit Behlim.
+
+This repository uses two reuse terms:
 
 1. Website code
-The original HTML, CSS, JavaScript, and other source code written specifically for
-this portfolio website are licensed under the MIT License. See LICENSE-CODE.md.
+The original HTML, CSS, JavaScript, and other source code created for this
+portfolio website are licensed under the MIT License. See LICENSE-CODE.md.
 
 2. Portfolio content
-Unless a file or section states otherwise, the portfolio's written content,
-research/project descriptions, biographical and academic information, visual
-identity, logos, branding, original illustrations, photographs, and other
-creative or personal content are Copyright (c) 2026 Abdul Basit Behlim.
-All rights reserved. See CONTENT-LICENSE.md.
+All non-code portfolio content, including written material, research/project
+descriptions, biography, academic information, visual identity, branding,
+illustrations, graphics, photographs, figures, diagrams, and presentation
+material, is Copyright (c) 2026 Abdul Basit Behlim. All rights reserved.
+See CONTENT-LICENSE.md.
 
-Third-party software, fonts, libraries, datasets, trademarks, images, or other
-materials remain subject to their own licenses and ownership terms.
-
-The MIT license for the website code does not grant permission to reuse Abdul
-Basit Behlim's name, likeness, biography, research claims, project identity,
-branding, or other protected portfolio content.
+The MIT License for the website code does not grant permission to reuse Abdul
+Basit Behlim's name, likeness, biography, research descriptions, project
+identity, branding, visual material, or other protected portfolio content.
