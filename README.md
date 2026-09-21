@@ -4,6 +4,8 @@ Personal research portfolio hosted with GitHub Pages.
 
 **Live website:** https://abdulbasitbehlim.github.io/
 
+**ORCID:** [0009-0003-5240-5413](https://orcid.org/0009-0003-5240-5413)
+
 ## Website structure
 
 - `index.html` — page content and project links
