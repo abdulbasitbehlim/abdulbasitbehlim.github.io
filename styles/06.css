@@ -1,1 +1,254 @@
-@media(max-width:600px){html{scroll-padding-top:94px}.shell{width:calc(100% - 40px)}.section{padding-block:67px}.main-nav{gap:24px;flex-wrap:wrap}.js .main-nav{padding:18px 22px 22px}.main-nav a{font-size:12px}.hero-layout{display:flex;flex-direction:column;align-items:stretch;min-height:0;padding-top:38px;padding-bottom:69px}.hero-copy{width:100%}.hero-eyebrow{font-size:7px;letter-spacing:.12em;margin-bottom:25px;max-width:none}.hero h1{font-size:clamp(53px,12.65vw,75px);line-height:1.06;letter-spacing:-.055em}.hero h1 em{font-size:1.23em}.hero-intro{font-size:13px;max-width:340px;margin-top:23px;line-height:1.95}.hero-actions{flex-direction:row;align-items:center;gap:19px;margin-top:23px}.button{font-size:11px;padding:13px 17px;gap:26px;min-height:47px}.hero-actions .quiet-link{max-width:125px;font-size:9px;line-height:1.8;gap:9px}.hero-art{position:relative;width:100%;margin:3px auto 0;height:362px;min-height:0}.hero-helix{width:107%;left:-3.5%;max-width:none}.art-label-top{top:15%;right:1%}.art-label-bottom{bottom:22%;left:1%}.art-coordinate{bottom:5%;font-size:6px}.hero-bottom{bottom:20px;flex-wrap:wrap;gap:10px}.hero-bottom p{display:none}.scroll-cue{font-size:9px}.motion-toggle{font-size:9px}.hero-glow{width:600px;height:900px;right:-240px;top:200px}.intro-band-inner{grid-template-columns:repeat(3,minmax(0,1fr));gap:0;padding-block:27px;min-height:0}.intro-band-inner>p{grid-column:1/-1;font-size:20px;line-height:1.5;padding-bottom:22px;margin-bottom:22px;border-bottom:1px solid var(--line)}.intro-band-inner>p br{display:none}.intro-band-inner>p em{margin-left:6px}.band-item{padding-left:15px}.band-item:nth-child(2){padding-left:0;border-left:0}.band-item strong{font-size:24px}.band-item span{font-size:8px;line-height:1.6;display:block;margin-top:5px}.section-top{display:block;margin-bottom:29px}.section-top .eyebrow{margin-bottom:17px}.eyebrow{font-size:9px}.section-number{margin-right:7px}h2{font-size:34px;line-height:1.2}.section-top>.section-intro{margin-top:20px;max-width:310px;font-size:12px}.work-toolbar{display:block;margin-bottom:20px;padding-bottom:16px}.project-filters{gap:4px}.project-filters button{font-size:10px;padding:8px 10px;min-height:42px}.project-count{display:block;margin-top:10px;line-height:1.5}.project-grid{grid-template-columns:1fr;gap:22px}.project-featured{display:flex;grid-column:auto}.project-visual,.project-featured .project-visual{height:235px;min-height:0;border-right:0;border-bottom:1px solid var(--line)}.project-featured .project-visual{height:270px}.project-featured .project-body,.project-body{padding:25px}.project-body h3,.project-featured h3{font-size:24px;line-height:1.35}.project-body>p:not(.project-status){font-size:12px;line-height:1.95}.project-status{font-size:9px}.tags li{font-size:9px}.project-links .text-link{font-size:11px}.visual-top>span:first-child{font-size:8px}.plant-art{padding:37px 16px 18px}.plant-art svg{max-height:217px}.art-bottom{font-size:6px}.guide-sequence span{font-size:44px}.guide-sequence em{font-size:53px}.guide-orbit{height:200px;width:200px;top:20px}.art-caption{font-size:7px}.studio-art{font-size:17px}.sequence-line.faded{font-size:15px}.section-foot{display:block;margin-top:24px}.section-foot .text-link{font-size:11px}.section-foot p{margin-top:9px;font-size:9px}.research-grid{grid-template-columns:1fr;margin-top:35px;gap:32px}.research-card,.research-card:first-child,.research-card:last-child{padding:0 0 30px;border:0;border-bottom:1px solid var(--line)}.research-card:last-child{border:0;padding-bottom:0}.research-icon{margin-bottom:21px;font-size:43px}.wave-icon{font-size:53px;line-height:43px}.research-card h3{font-size:23px;max-width:none;min-height:0}.research-card>p:not(.eyebrow){font-size:12px;max-width:350px;margin:13px 0 20px}.research-card .text-link{font-size:11px;gap:24px}.about-grid{grid-template-columns:1fr;gap:32px}.about-intro h2{font-size:36px}.identity-card{margin-top:29px}.about-copy>.lead{font-size:22px}.about-copy>p{font-size:13px}.about-copy blockquote{font-size:27px;margin:26px 0}.about-links .text-link{font-size:11px}.cv-grid{grid-template-columns:1fr;gap:40px}.cv-heading{font-size:14px}.cv-entry h4{font-size:17px}.cv-entry>p:last-child{font-size:12px}.recognition-section,.honours{margin-top:47px}.minor-heading{gap:20px;align-items:flex-start}.minor-heading .eyebrow{max-width:105px;text-align:right;font-size:7px;padding-top:4px}.minor-heading h3{font-size:19px}.recognition-card{padding:21px 15px}.recognition-card h4{font-size:14px}.recognition-card>p:last-child{font-size:11px}.award-row{grid-template-columns:1fr 20px;gap:6px 12px;padding:22px 0}.award-row>.eyebrow{grid-column:1;grid-row:1}.award-row>div{grid-column:1;grid-row:2}.award-row>span{grid-column:2;grid-row:1/3}.award-row h4{font-size:14px;margin-top:4px}.award-row div>p{font-size:12px}.journey-details summary{font-size:12px}.journey-details summary small{font-size:9px;margin-left:9px}.timeline li{grid-template-columns:63px 1fr;gap:13px}.timeline time{font-size:9px}.timeline p{font-size:11px}.toolkit-layout{grid-template-columns:1fr;gap:34px}.toolkit-layout h2{font-size:37px;line-height:1.18;margin-top:19px}.toolkit-layout h2 br{display:none}.toolkit-layout .section-intro{max-width:none;margin-top:17px}.toolkit-list h3{font-size:13px}.toolkit-list p{font-size:12px}.contact-section{padding-bottom:0}.contact-content>.eyebrow{font-size:8px}.contact-content h2{font-size:clamp(31px,8.3vw,48px);line-height:1.14;letter-spacing:-.045em}.contact-content h2 em{font-size:1.15em}.contact-content>p:not(.eyebrow,.copy-status){font-size:12px;max-width:310px}.contact-actions{gap:24px}.contact-actions .button{min-width:164px}.email-address{font-size:11px}.contact-mark{right:0;bottom:81px;font-size:185px;letter-spacing:-10px}.social-row{gap:29px;margin-top:38px}.social-row .text-link{font-size:10px;gap:15px}.footer-inner{flex-wrap:wrap;min-height:98px;gap:10px;padding-block:24px;font-size:9px}.footer-inner>span{display:none}.footer-inner a{gap:18px}}
+/*
+STYLE FILE 06 - MOBILE LAYOUT
+-----------------------------
+This file contains the main responsive rules for screens up to 600px wide.
+It reorganises the same website content so it remains readable on phones.
+*/
+
+@media(max-width:600px){html{scroll-padding-top:94px}
+
+.shell{width:calc(100% - 40px)}
+
+.section{padding-block:67px}
+
+.main-nav{gap:24px;flex-wrap:wrap}
+
+.js .main-nav{padding:18px 22px 22px}
+
+.main-nav a{font-size:12px}
+
+.hero-layout{display:flex;flex-direction:column;align-items:stretch;min-height:0;padding-top:38px;padding-bottom:69px}
+
+.hero-copy{width:100%}
+
+.hero-eyebrow{font-size:7px;letter-spacing:.12em;margin-bottom:25px;max-width:none}
+
+.hero h1{font-size:clamp(53px,12.65vw,75px);line-height:1.06;letter-spacing:-.055em}
+
+.hero h1 em{font-size:1.23em}
+
+.hero-intro{font-size:13px;max-width:340px;margin-top:23px;line-height:1.95}
+
+.hero-actions{flex-direction:row;align-items:center;gap:19px;margin-top:23px}
+
+.button{font-size:11px;padding:13px 17px;gap:26px;min-height:47px}
+
+.hero-actions .quiet-link{max-width:125px;font-size:9px;line-height:1.8;gap:9px}
+
+.hero-art{position:relative;width:100%;margin:3px auto 0;height:362px;min-height:0}
+
+.hero-helix{width:107%;left:-3.5%;max-width:none}
+
+.art-label-top{top:15%;right:1%}
+
+.art-label-bottom{bottom:22%;left:1%}
+
+.art-coordinate{bottom:5%;font-size:6px}
+
+.hero-bottom{bottom:20px;flex-wrap:wrap;gap:10px}
+
+.hero-bottom p{display:none}
+
+.scroll-cue{font-size:9px}
+
+.motion-toggle{font-size:9px}
+
+.hero-glow{width:600px;height:900px;right:-240px;top:200px}
+
+.intro-band-inner{grid-template-columns:repeat(3,minmax(0,1fr));gap:0;padding-block:27px;min-height:0}
+
+.intro-band-inner>p{grid-column:1/-1;font-size:20px;line-height:1.5;padding-bottom:22px;margin-bottom:22px;border-bottom:1px solid var(--line)}
+
+.intro-band-inner>p br{display:none}
+
+.intro-band-inner>p em{margin-left:6px}
+
+.band-item{padding-left:15px}
+
+.band-item:nth-child(2){padding-left:0;border-left:0}
+
+.band-item strong{font-size:24px}
+
+.band-item span{font-size:8px;line-height:1.6;display:block;margin-top:5px}
+
+.section-top{display:block;margin-bottom:29px}
+
+.section-top .eyebrow{margin-bottom:17px}
+
+.eyebrow{font-size:9px}
+
+.section-number{margin-right:7px}
+
+h2{font-size:34px;line-height:1.2}
+
+.section-top>.section-intro{margin-top:20px;max-width:310px;font-size:12px}
+
+.work-toolbar{display:block;margin-bottom:20px;padding-bottom:16px}
+
+.project-filters{gap:4px}
+
+.project-filters button{font-size:10px;padding:8px 10px;min-height:42px}
+
+.project-count{display:block;margin-top:10px;line-height:1.5}
+
+.project-grid{grid-template-columns:1fr;gap:22px}
+
+.project-featured{display:flex;grid-column:auto}
+
+.project-visual,.project-featured .project-visual{height:235px;min-height:0;border-right:0;border-bottom:1px solid var(--line)}
+
+.project-featured .project-visual{height:270px}
+
+.project-featured .project-body,.project-body{padding:25px}
+
+.project-body h3,.project-featured h3{font-size:24px;line-height:1.35}
+
+.project-body>p:not(.project-status){font-size:12px;line-height:1.95}
+
+.project-status{font-size:9px}
+
+.tags li{font-size:9px}
+
+.project-links .text-link{font-size:11px}
+
+.visual-top>span:first-child{font-size:8px}
+
+.plant-art{padding:37px 16px 18px}
+
+.plant-art svg{max-height:217px}
+
+.art-bottom{font-size:6px}
+
+.guide-sequence span{font-size:44px}
+
+.guide-sequence em{font-size:53px}
+
+.guide-orbit{height:200px;width:200px;top:20px}
+
+.art-caption{font-size:7px}
+
+.studio-art{font-size:17px}
+
+.sequence-line.faded{font-size:15px}
+
+.section-foot{display:block;margin-top:24px}
+
+.section-foot .text-link{font-size:11px}
+
+.section-foot p{margin-top:9px;font-size:9px}
+
+.research-grid{grid-template-columns:1fr;margin-top:35px;gap:32px}
+
+.research-card,.research-card:first-child,.research-card:last-child{padding:0 0 30px;border:0;border-bottom:1px solid var(--line)}
+
+.research-card:last-child{border:0;padding-bottom:0}
+
+.research-icon{margin-bottom:21px;font-size:43px}
+
+.wave-icon{font-size:53px;line-height:43px}
+
+.research-card h3{font-size:23px;max-width:none;min-height:0}
+
+.research-card>p:not(.eyebrow){font-size:12px;max-width:350px;margin:13px 0 20px}
+
+.research-card .text-link{font-size:11px;gap:24px}
+
+.about-grid{grid-template-columns:1fr;gap:32px}
+
+.about-intro h2{font-size:36px}
+
+.identity-card{margin-top:29px}
+
+.about-copy>.lead{font-size:22px}
+
+.about-copy>p{font-size:13px}
+
+.about-copy blockquote{font-size:27px;margin:26px 0}
+
+.about-links .text-link{font-size:11px}
+
+.cv-grid{grid-template-columns:1fr;gap:40px}
+
+.cv-heading{font-size:14px}
+
+.cv-entry h4{font-size:17px}
+
+.cv-entry>p:last-child{font-size:12px}
+
+.recognition-section,.honours{margin-top:47px}
+
+.minor-heading{gap:20px;align-items:flex-start}
+
+.minor-heading .eyebrow{max-width:105px;text-align:right;font-size:7px;padding-top:4px}
+
+.minor-heading h3{font-size:19px}
+
+.recognition-card{padding:21px 15px}
+
+.recognition-card h4{font-size:14px}
+
+.recognition-card>p:last-child{font-size:11px}
+
+.award-row{grid-template-columns:1fr 20px;gap:6px 12px;padding:22px 0}
+
+.award-row>.eyebrow{grid-column:1;grid-row:1}
+
+.award-row>div{grid-column:1;grid-row:2}
+
+.award-row>span{grid-column:2;grid-row:1/3}
+
+.award-row h4{font-size:14px;margin-top:4px}
+
+.award-row div>p{font-size:12px}
+
+.journey-details summary{font-size:12px}
+
+.journey-details summary small{font-size:9px;margin-left:9px}
+
+.timeline li{grid-template-columns:63px 1fr;gap:13px}
+
+.timeline time{font-size:9px}
+
+.timeline p{font-size:11px}
+
+.toolkit-layout{grid-template-columns:1fr;gap:34px}
+
+.toolkit-layout h2{font-size:37px;line-height:1.18;margin-top:19px}
+
+.toolkit-layout h2 br{display:none}
+
+.toolkit-layout .section-intro{max-width:none;margin-top:17px}
+
+.toolkit-list h3{font-size:13px}
+
+.toolkit-list p{font-size:12px}
+
+.contact-section{padding-bottom:0}
+
+.contact-content>.eyebrow{font-size:8px}
+
+.contact-content h2{font-size:clamp(31px,8.3vw,48px);line-height:1.14;letter-spacing:-.045em}
+
+.contact-content h2 em{font-size:1.15em}
+
+.contact-content>p:not(.eyebrow,.copy-status){font-size:12px;max-width:310px}
+
+.contact-actions{gap:24px}
+
+.contact-actions .button{min-width:164px}
+
+.email-address{font-size:11px}
+
+.contact-mark{right:0;bottom:81px;font-size:185px;letter-spacing:-10px}
+
+.social-row{gap:29px;margin-top:38px}
+
+.social-row .text-link{font-size:10px;gap:15px}
+
+.footer-inner{flex-wrap:wrap;min-height:98px;gap:10px;padding-block:24px;font-size:9px}
+
+.footer-inner>span{display:none}
+
+.footer-inner a{gap:18px}
+
+}
