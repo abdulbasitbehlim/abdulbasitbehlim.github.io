@@ -1,10 +1,3 @@
-/*
-STYLE FILE 04 - ABOUT, JOURNEY, TOOLKIT AND CONTACT
----------------------------------------------------
-This file styles the researcher profile, education and experience timeline,
-exam/award cards, toolkit section and the main contact area.
-*/
-
 .about-intro h2 em{display:block;line-height:1.12;margin-top:5px}
 
 .identity-card{display:flex;gap:22px;align-items:center;margin-top:56px}
