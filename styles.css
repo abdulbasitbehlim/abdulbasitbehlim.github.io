@@ -1,3 +1,12 @@
+/*
+BEGINNER-FRIENDLY CSS GUIDE
+---------------------------
+This is the main stylesheet loader.
+It imports the seven smaller CSS files in order so the browser can build the
+complete design. Keeping the styles split into numbered files makes the
+portfolio easier to maintain.
+*/
+
 @import url('styles/01.css?v=sharp-rotate-20260919');
 @import url('styles/02.css?v=sharp-rotate-20260919');
 @import url('styles/03.css?v=sharp-rotate-20260919');
