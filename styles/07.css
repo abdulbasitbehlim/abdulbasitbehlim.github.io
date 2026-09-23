@@ -1,35 +1,167 @@
-@media(max-width:360px){.shell{width:calc(100% - 32px)}.hero h1{font-size:48px}.hero-eyebrow{font-size:6px}.hero-actions{gap:12px}.hero-actions .quiet-link{font-size:8px;max-width:108px}.hero-art{height:325px}.intro-band-inner>p{font-size:17px}.band-item strong{font-size:21px}.project-body,.project-featured .project-body{padding:22px}.project-body h3,.project-featured h3{font-size:22px}.social-row{gap:22px}.contact-content h2{font-size:29px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.js .reveal-pending{opacity:1;transform:none}.project-card:hover,.button-primary:hover{transform:none}}
+/*
+STYLE FILE 07 - SMALL SCREENS, THEMES AND PRINT
+-----------------------------------------------
+This file handles very small screens, reduced-motion accessibility, the
+light/dark theme switch, print styling and final visual refinements.
+*/
+
+@media(max-width:360px){.shell{width:calc(100% - 32px)}
+
+.hero h1{font-size:48px}
+
+.hero-eyebrow{font-size:6px}
+
+.hero-actions{gap:12px}
+
+.hero-actions .quiet-link{font-size:8px;max-width:108px}
+
+.hero-art{height:325px}
+
+.intro-band-inner>p{font-size:17px}
+
+.band-item strong{font-size:21px}
+
+.project-body,.project-featured .project-body{padding:22px}
+
+.project-body h3,.project-featured h3{font-size:22px}
+
+.social-row{gap:22px}
+
+.contact-content h2{font-size:29px}
+
+}
+
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}
+
+*,*::before,*::after{animation:none!important;transition:none!important}
+
+.js .reveal-pending{opacity:1;transform:none}
+
+.project-card:hover,.button-primary:hover{transform:none}
+
+}
 
 /* Blue-black theme controls */
 html{background:var(--bg)}
+
 body,.site-header,.intro-band,.project-card,.project-visual,.research-section,.journey-section,.recognition-card,.contact-section,.site-footer,.main-nav{transition:background-color .35s ease,color .35s ease,border-color .35s ease,box-shadow .35s ease}
+
 .theme-toggle{display:inline-flex;align-items:center;gap:9px;padding:8px 10px 8px 8px;border:1px solid var(--line-strong);border-radius:999px;background:color-mix(in srgb,var(--surface) 76%,transparent);color:var(--muted);font-size:10px;font-weight:600;letter-spacing:.03em;white-space:nowrap;transition:border-color .2s,background .2s,color .2s,transform .2s}
+
 .theme-toggle:hover{border-color:var(--accent);color:var(--ink);background:var(--surface-raised);transform:translateY(-1px)}
+
 .theme-toggle-track{width:34px;height:20px;padding:2px;border:1px solid var(--line);border-radius:999px;background:var(--surface-raised);display:block;position:relative}
+
 .theme-toggle-knob{width:14px;height:14px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent),var(--accent-2));box-shadow:0 0 18px var(--accent-glow);transform:translateX(0);transition:transform .3s ease}
+
 html[data-theme=light] .theme-toggle-knob{transform:translateX(14px)}
+
 .theme-toggle-knob span{font-size:9px;line-height:1;color:white;transform:translateY(-.5px)}
+
 html[data-theme=light] body::after{opacity:.018}
+
 html[data-theme=light] .hero-helix{filter:saturate(1.08) contrast(.95);opacity:.92}
+
 html[data-theme=dark] .hero-helix{filter:saturate(1.18) drop-shadow(0 22px 42px rgba(15,92,255,.11));opacity:.96}
+
 .hero::before{content:'';position:absolute;width:520px;height:520px;left:-290px;bottom:-250px;background:radial-gradient(circle,var(--visual-glow),transparent 66%);pointer-events:none}
+
 .project-card{box-shadow:0 18px 50px rgba(0,0,0,.06)}
+
 html[data-theme=dark] .project-card{box-shadow:0 18px 55px rgba(0,0,0,.18)}
+
 html[data-theme=dark] .button-primary{box-shadow:0 10px 30px rgba(30,111,255,.2)}
+
 html[data-theme=light] .project-card:hover{box-shadow:0 20px 50px rgba(19,72,145,.12)}
+
 html[data-theme=light] .visual-top>span:first-child,html[data-theme=light] .art-caption{color:#3d5879}
+
 html[data-theme=light] .plant-art svg{filter:saturate(1.08) contrast(.92)}
-@media(max-width:1100px){.theme-toggle-label{display:none}.theme-toggle{padding-right:8px}}
-@media(max-width:800px){.theme-toggle{position:absolute;right:59px;top:19px;margin:0;z-index:2}.brand,.menu-button{margin-block:19px}.menu-button{margin-left:auto}.main-nav{background:var(--bg)}}
-@media(max-width:420px){.theme-toggle{right:51px}.theme-toggle-track{width:32px}.theme-toggle-knob{width:14px}html[data-theme=light] .theme-toggle-knob{transform:translateX(12px)}}
-@media print{body{background:white;color:#111;font-size:11px}body::after,.site-header,.hero-art,.hero-bottom,.hero-glow,.project-visual,.project-filters,.project-count,.motion-toggle,.copy-email,.contact-mark,.scroll-progress,.skip-link{display:none!important}.shell{width:100%}.section{padding:25px 0;background:white;border-color:#ccc}.hero-layout{min-height:0;display:block;padding:20px 0}.hero h1{font-size:52px}.hero-intro,.section-intro,.project-body>p,.research-card>p,.about-copy>p,.cv-entry>p,.toolkit-list p,.award-row p,.recognition-card p{color:#333!important}.project-grid{display:block}.project-card{display:block;border-color:#ccc;margin-bottom:15px;break-inside:avoid;background:white}.project-body{padding:15px}.project-links a{color:#111}.intro-band{background:white}.hero h1 em,h2 em,blockquote,.eyebrow,.text-link span{color:#6b432a!important}.reveal,.js .reveal-pending{opacity:1!important;transform:none!important}.contact-section,.site-footer{background:white}.contact-content h2{font-size:35px}.contact-content>p{color:#333!important}.tags li{color:#333;border-color:#ccc}.button{background:white;color:#111;border-color:#555}.footer-inner{min-height:50px;color:#555}.research-grid{gap:20px}.about-grid,.cv-grid,.toolkit-layout{gap:30px}.recognition-card{background:white;border-color:#ccc}.social-row{margin-top:20px}}
+
+@media(max-width:1100px){.theme-toggle-label{display:none}
+
+.theme-toggle{padding-right:8px}
+
+}
+
+@media(max-width:800px){.theme-toggle{position:absolute;right:59px;top:19px;margin:0;z-index:2}
+
+.brand,.menu-button{margin-block:19px}
+
+.menu-button{margin-left:auto}
+
+.main-nav{background:var(--bg)}
+
+}
+
+@media(max-width:420px){.theme-toggle{right:51px}
+
+.theme-toggle-track{width:32px}
+
+.theme-toggle-knob{width:14px}
+
+html[data-theme=light] .theme-toggle-knob{transform:translateX(12px)}
+
+}
+
+@media print{body{background:white;color:#111;font-size:11px}
+
+body::after,.site-header,.hero-art,.hero-bottom,.hero-glow,.project-visual,.project-filters,.project-count,.motion-toggle,.copy-email,.contact-mark,.scroll-progress,.skip-link{display:none!important}
+
+.shell{width:100%}
+
+.section{padding:25px 0;background:white;border-color:#ccc}
+
+.hero-layout{min-height:0;display:block;padding:20px 0}
+
+.hero h1{font-size:52px}
+
+.hero-intro,.section-intro,.project-body>p,.research-card>p,.about-copy>p,.cv-entry>p,.toolkit-list p,.award-row p,.recognition-card p{color:#333!important}
+
+.project-grid{display:block}
+
+.project-card{display:block;border-color:#ccc;margin-bottom:15px;break-inside:avoid;background:white}
+
+.project-body{padding:15px}
+
+.project-links a{color:#111}
+
+.intro-band{background:white}
+
+.hero h1 em,h2 em,blockquote,.eyebrow,.text-link span{color:#6b432a!important}
+
+.reveal,.js .reveal-pending{opacity:1!important;transform:none!important}
+
+.contact-section,.site-footer{background:white}
+
+.contact-content h2{font-size:35px}
+
+.contact-content>p{color:#333!important}
+
+.tags li{color:#333;border-color:#ccc}
+
+.button{background:white;color:#111;border-color:#555}
+
+.footer-inner{min-height:50px;color:#555}
+
+.research-grid{gap:20px}
+
+.about-grid,.cv-grid,.toolkit-layout{gap:30px}
+
+.recognition-card{background:white;border-color:#ccc}
+
+.social-row{margin-top:20px}
+
+}
 
 /* Keep the last research feature balanced with the first featured project. */
 .project-featured .molecule-art img{width:245px;height:265px}
-html:not(.js) .menu-button{display:none}
-@media(max-width:600px){.project-featured .molecule-art img{width:180px;height:195px}}
 
+html:not(.js) .menu-button{display:none}
+
+@media(max-width:600px){.project-featured .molecule-art img{width:180px;height:195px}
+
+}
 
 /* 4K-style clarity pass: higher contrast, crisper surfaces, brighter blue depth. */
 :root{
@@ -60,6 +192,7 @@ html:not(.js) .menu-button{display:none}
   --accent-glow:rgba(52,135,255,.27);
   --visual-glow:rgba(0,199,255,.20);
 }
+
 html[data-theme=light]{
   --bg:#f7faff;
   --surface:#ffffff;
@@ -81,7 +214,9 @@ html[data-theme=light]{
   --line:rgba(20,86,170,.18);
   --line-strong:rgba(20,95,210,.30);
 }
+
 html,body{min-height:100%}
+
 body{
   background:
     radial-gradient(circle at 72% 8%,rgba(31,105,255,.10),transparent 28%),
@@ -89,36 +224,45 @@ body{
     var(--bg);
   text-rendering:optimizeLegibility;
 }
+
 svg{shape-rendering:geometricPrecision;text-rendering:geometricPrecision}
+
 .site-header{box-shadow:0 10px 34px rgba(0,0,0,.18)}
+
 .project-card,.recognition-card{
   border-color:var(--line);
   backdrop-filter:blur(10px);
 }
+
 .project-card{
   box-shadow:
     0 22px 65px rgba(0,0,0,.28),
     inset 0 1px 0 rgba(255,255,255,.025);
 }
+
 .project-card:hover{
   box-shadow:
     0 28px 80px rgba(0,0,0,.36),
     0 0 0 1px rgba(66,145,255,.09),
     0 0 36px rgba(40,122,255,.10);
 }
+
 .button-primary{
   box-shadow:
     0 14px 34px rgba(29,106,255,.28),
     inset 0 1px 0 rgba(255,255,255,.16);
 }
+
 .hero-glow{
   background:radial-gradient(ellipse,rgba(52,135,255,.27),rgba(0,199,255,.08) 35%,transparent 67%);
   filter:blur(3px);
 }
+
 .hero-art{
   perspective:1400px;
   transform-style:preserve-3d;
 }
+
 .hero-helix{
   opacity:1!important;
   filter:
@@ -132,30 +276,40 @@ svg{shape-rendering:geometricPrecision;text-rendering:geometricPrecision}
   will-change:transform,filter;
   animation:helix-rotate-3d 14s cubic-bezier(.45,.05,.55,.95) infinite!important;
 }
+
 @keyframes helix-rotate-3d{
   0%{
     transform:perspective(1400px) rotateY(-10deg) rotateZ(-2.5deg) translateY(-7px) scale(1.005);
   }
-  25%{
+
+25%{
     transform:perspective(1400px) rotateY(7deg) rotateZ(0.8deg) translateY(-1px) scale(1.015);
   }
-  50%{
+
+50%{
     transform:perspective(1400px) rotateY(14deg) rotateZ(2.4deg) translateY(7px) scale(1.01);
   }
-  75%{
+
+75%{
     transform:perspective(1400px) rotateY(-5deg) rotateZ(-.7deg) translateY(1px) scale(1.02);
   }
-  100%{
+
+100%{
     transform:perspective(1400px) rotateY(-10deg) rotateZ(-2.5deg) translateY(-7px) scale(1.005);
   }
+
 }
+
 .hero h1,.section h2,.project-body h3,.about-copy>.lead,.contact-content h2{
   text-shadow:0 1px 0 rgba(255,255,255,.02),0 10px 36px rgba(0,0,0,.18);
 }
+
 .eyebrow,.art-label,.art-coordinate,.visual-top>span:first-child{
   letter-spacing:.16em;
   text-shadow:0 0 14px rgba(61,143,255,.16);
 }
+
 @media(prefers-reduced-motion:reduce){
   .hero-helix{animation:none!important;transform:none!important}
+
 }
