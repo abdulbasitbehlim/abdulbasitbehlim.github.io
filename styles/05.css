@@ -1,10 +1,3 @@
-/*
-STYLE FILE 05 - FOOTER, ANIMATION AND TABLET LAYOUTS
-----------------------------------------------------
-This file styles social/footer areas, reveal animations and responsive
-layouts for large tablets and medium-width screens.
-*/
-
 .social-row{display:flex;gap:37px;border-top:1px solid var(--line);margin-top:59px;padding:24px 0;position:relative}
 
 .social-row .text-link{font-size:11px}
