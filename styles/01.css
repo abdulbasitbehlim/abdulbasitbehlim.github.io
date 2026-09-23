@@ -1,11 +1,3 @@
-/*
-STYLE FILE 01 - FOUNDATION
---------------------------
-This file defines the colour variables, dark/light theme values, basic page
-defaults, shared typography, the page container, header and navigation.
-CSS variables beginning with -- can be reused throughout the other files.
-*/
-
 /* Cinematic portfolio. Edit the variables here to change the colour palette. */
 @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700&display=swap');
 :root{--bg:#050812;--surface:#0a1020;--surface-raised:#0f1930;--surface-soft:#0b1426;--section-alt:#070c18;--contact-bg:#091225;--footer-bg:#040711;--visual-bg:#091224;--visual-bg-2:#07111f;--visual-bg-3:#08162a;--visual-bg-5:#0a1326;--visual-bg-6:#071325;--ink:#f5f9ff;--muted:#a9b8cc;--subtle:#71839f;--accent:#2f7cff;--accent-2:#00b7ff;--accent-hover:#5a98ff;--sage:#56d5ff;--button-ink:#f8fbff;--line:rgba(108,156,255,.18);--line-strong:rgba(105,160,255,.34);--line-hover:rgba(73,137,255,.52);--header:rgba(5,8,18,.88);--header-scrolled:rgba(5,8,18,.96);--band:rgba(10,19,37,.72);--accent-glow:rgba(47,124,255,.18);--visual-glow:rgba(0,183,255,.12);--soft-accent:rgba(47,124,255,.09);--orbit:rgba(100,168,255,.25);--orbit-soft:rgba(100,168,255,.12);--mark:rgba(74,143,255,.06);--serif:'Instrument Serif',Georgia,serif;--sans:Manrope,Arial,sans-serif;color-scheme:dark}
