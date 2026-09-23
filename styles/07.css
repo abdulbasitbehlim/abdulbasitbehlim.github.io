@@ -1,10 +1,3 @@
-/*
-STYLE FILE 07 - SMALL SCREENS, THEMES AND PRINT
------------------------------------------------
-This file handles very small screens, reduced-motion accessibility, the
-light/dark theme switch, print styling and final visual refinements.
-*/
-
 @media(max-width:360px){.shell{width:calc(100% - 32px)}
 
 .hero h1{font-size:48px}
