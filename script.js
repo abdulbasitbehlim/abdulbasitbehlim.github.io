@@ -1,5 +1,3 @@
-
-
 (() => {
   "use strict";
   // Small Helper Functions
@@ -7,17 +5,14 @@
   const root = document.documentElement;
   root.classList.add("js");
 
-  // Find the first element that matches a CSS selector.
   function findElement(selector) {
     return document.querySelector(selector);
   }
 
-  // Find all elements that match a CSS selector and return a normal array.
   function findAllElements(selector) {
     return Array.from(document.querySelectorAll(selector));
   }
 
-  // Check whether the user's device prefers reduced motion.
   const reducedMotion = window.matchMedia(
     "(prefers-reduced-motion: reduce)"
   );
@@ -81,10 +76,8 @@
     }
   }
 
-  // Start with the theme already placed on the HTML element.
   let initialTheme = root.dataset.theme || "dark";
 
-  // If a saved preference exists, use it.
   try {
     initialTheme =
       localStorage.getItem("abb-theme") || initialTheme;
@@ -137,7 +130,6 @@
     setMenu(!isCurrentlyOpen);
   });
 
-  // Close the menu after a navigation link is selected.
   const menuLinks = menu.querySelectorAll("a");
 
   menuLinks.forEach(function (link) {
@@ -146,7 +138,6 @@
     });
   });
 
-  // Escape closes the menu and returns keyboard focus to the button.
   document.addEventListener("keydown", function (event) {
     if (
       event.key === "Escape" &&
@@ -156,7 +147,6 @@
     }
   });
 
-  // Clicking or tabbing outside the header closes the open menu.
   const outsideEvents = ["click", "focusin"];
 
   outsideEvents.forEach(function (eventType) {
@@ -171,7 +161,6 @@
     });
   });
 
-  // Reset the menu if the page crosses the mobile breakpoint.
   const mobileMediaQuery =
     window.matchMedia("(max-width:800px)");
 
@@ -264,7 +253,6 @@
 
   syncMotion();
 
-  // Pause some visual work while the browser tab is inactive.
   document.addEventListener(
     "visibilitychange",
     function () {
