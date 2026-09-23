@@ -1,28 +1,8 @@
-/*
-BEGINNER-FRIENDLY JAVASCRIPT GUIDE
-----------------------------------
-This file adds interactive behaviour to the portfolio website.
 
-The page itself still works without JavaScript. JavaScript is only used for
-extra features such as:
-1. Light/dark theme switching
-2. Mobile menu opening and closing
-3. Motion controls and reveal animations
-4. Project filtering
-5. Scroll progress and active navigation links
-6. Copying the email address
-7. Updating the footer year automatically
-
-The code is intentionally divided into clear sections so a beginner can
-follow one feature at a time.
-*/
 
 (() => {
   "use strict";
-
-  // ------------------------------------------------------------
-  // 1. SMALL HELPER FUNCTIONS
-  // ------------------------------------------------------------
+  // Small Helper Functions
 
   const root = document.documentElement;
   root.classList.add("js");
@@ -41,11 +21,7 @@ follow one feature at a time.
   const reducedMotion = window.matchMedia(
     "(prefers-reduced-motion: reduce)"
   );
-
-
-  // ------------------------------------------------------------
-  // 2. LIGHT / DARK THEME
-  // ------------------------------------------------------------
+  // Light / Dark Theme
 
   const themeButton = findElement("#themeToggle");
   const themeColorMeta = document.querySelector(
@@ -53,7 +29,6 @@ follow one feature at a time.
   );
 
   function applyTheme(theme, savePreference = false) {
-    // Only two theme names are accepted.
     let nextTheme = "dark";
 
     if (theme === "light") {
@@ -90,7 +65,6 @@ follow one feature at a time.
       }
     }
 
-    // Update the browser theme colour.
     if (themeColorMeta) {
       if (isLightTheme) {
         themeColorMeta.setAttribute("content", "#f4f7fc");
@@ -99,12 +73,10 @@ follow one feature at a time.
       }
     }
 
-    // Save the user's choice only when requested.
     if (savePreference) {
       try {
         localStorage.setItem("abb-theme", nextTheme);
       } catch (error) {
-        // The website still works if local storage is unavailable.
       }
     }
   }
@@ -117,7 +89,6 @@ follow one feature at a time.
     initialTheme =
       localStorage.getItem("abb-theme") || initialTheme;
   } catch (error) {
-    // Keep the default theme if local storage cannot be read.
   }
 
   applyTheme(initialTheme);
@@ -135,11 +106,7 @@ follow one feature at a time.
       applyTheme(nextTheme, true);
     });
   }
-
-
-  // ------------------------------------------------------------
-  // 3. MOBILE NAVIGATION MENU
-  // ------------------------------------------------------------
+  // Mobile Navigation Menu
 
   const menu = findElement("#mainNav");
   const menuButton = findElement("#menuButton");
@@ -211,11 +178,7 @@ follow one feature at a time.
   mobileMediaQuery.addEventListener("change", function () {
     setMenu(false);
   });
-
-
-  // ------------------------------------------------------------
-  // 4. MOTION / ANIMATION CONTROL
-  // ------------------------------------------------------------
+  // Motion / Animation Control
 
   let pauseRequested = false;
 
@@ -273,7 +236,6 @@ follow one feature at a time.
       motionIcon.textContent = "Ⅱ";
     }
 
-    // If motion is paused, show all content immediately.
     if (motionIsPaused) {
       const pendingElements =
         findAllElements(".reveal-pending");
@@ -293,7 +255,6 @@ follow one feature at a time.
         String(pauseRequested)
       );
     } catch (error) {
-      // Ignore storage errors.
     }
 
     syncMotion();
@@ -313,11 +274,7 @@ follow one feature at a time.
       );
     }
   );
-
-
-  // ------------------------------------------------------------
-  // 5. SCROLL REVEAL ANIMATION
-  // ------------------------------------------------------------
+  // Scroll Reveal Animation
 
   const observerSupported =
     "IntersectionObserver" in window;
@@ -356,11 +313,7 @@ follow one feature at a time.
       observer.observe(element);
     });
   }
-
-
-  // ------------------------------------------------------------
-  // 6. PROJECT FILTERING
-  // ------------------------------------------------------------
+  // Project Filtering
 
   const filterButtons =
     findAllElements("[data-filter]");
@@ -371,7 +324,6 @@ follow one feature at a time.
   findElement(".project-filters").hidden = false;
 
   function filterProjects(filterName) {
-    // Check that a button exists for this filter.
     const filterExists = filterButtons.some(
       function (button) {
         return button.dataset.filter === filterName;
@@ -439,11 +391,7 @@ follow one feature at a time.
       filterProjects(link.dataset.researchFilter);
     });
   });
-
-
-  // ------------------------------------------------------------
-  // 7. SCROLL PROGRESS + ACTIVE NAVIGATION
-  // ------------------------------------------------------------
+  // Scroll Progress + Active Navigation
 
   const header = findElement("#siteHeader");
   const progress = findElement("#scrollProgress");
@@ -563,11 +511,7 @@ follow one feature at a time.
   }
 
   syncScroll();
-
-
-  // ------------------------------------------------------------
-  // 8. COPY EMAIL BUTTON
-  // ------------------------------------------------------------
+  // Copy Email Button
 
   const copyButton = findElement("#copyEmail");
   const email = "abdulbasitbehlim3@gmail.com";
@@ -579,7 +523,6 @@ follow one feature at a time.
     async function () {
       let copied = false;
 
-      // Try the modern Clipboard API first.
       try {
         if (
           navigator.clipboard &&
@@ -592,7 +535,6 @@ follow one feature at a time.
         copied = false;
       }
 
-      // Use the older copy method as a fallback.
       if (!copied) {
         const temporaryTextArea =
           document.createElement("textarea");
@@ -632,11 +574,7 @@ follow one feature at a time.
       }
     }
   );
-
-
-  // ------------------------------------------------------------
-  // 9. FOOTER YEAR
-  // ------------------------------------------------------------
+  // Footer Year
 
   const currentYear = new Date().getFullYear();
 
