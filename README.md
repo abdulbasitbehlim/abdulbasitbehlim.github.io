@@ -4,20 +4,6 @@ Personal research portfolio hosted with GitHub Pages.
 
 **Live website:** https://abdulbasitbehlim.github.io/
 
-**ORCID:** [0009-0003-5240-5413](https://orcid.org/0009-0003-5240-5413)
-
-## Website structure
-
-- `index.html` — page content and project links
-- `styles.css` — loads the modular CSS files
-- `styles/01.css` … `styles/07.css` — theme, layout, components and responsive styling
-- `script.js` — theme toggle, navigation, motion, filters and interactive controls
-- `assets/favicon.svg` — browser icon
-- `assets/helix.svg` — hero illustration
-- `assets/phage-transparent.png` — phage project artwork
-- `assets/protein-transparent.png` — structural-biology artwork
-- `.nojekyll` — static GitHub Pages configuration
-
 ## Licensing
 
 All source code and portfolio material in this repository were created and authored by **Abdul Basit Behlim**.
