@@ -47,16 +47,16 @@
           "Switch to dark mode"
         );
         themeButton.title = "Switch to dark mode";
-        findElement("#themeLabel").textContent = "Dark";
-        findElement("#themeIcon").textContent = "☾";
+        const themeIcon = findElement("#themeIcon");
+        if (themeIcon) themeIcon.textContent = "☾";
       } else {
         themeButton.setAttribute(
           "aria-label",
           "Switch to light mode"
         );
         themeButton.title = "Switch to light mode";
-        findElement("#themeLabel").textContent = "Light";
-        findElement("#themeIcon").textContent = "☀";
+        const themeIcon = findElement("#themeIcon");
+        if (themeIcon) themeIcon.textContent = "☀";
       }
     }
 
