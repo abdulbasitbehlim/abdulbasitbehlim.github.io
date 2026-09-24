@@ -424,16 +424,16 @@ html[data-theme=light] .main-nav .theme-toggle #themeIcon{color:#315f9e}
   min-width:54px;
   flex:0 0 54px;
   display:block;
-  border-radius:50%;
-  background-image:url("../assets/Professional%20image.jpg.jpeg?v=20260924f");
-  background-size:170%;
-  background-position:50% 36%;
+  border-radius:10px;
+  background-image:url("../assets/Professional%20image.jpg.jpeg?v=20260924g");
+  background-size:contain;
+  background-position:center;
   background-repeat:no-repeat;
   border:1px solid color-mix(in srgb,var(--accent) 58%,var(--line));
   background-color:var(--surface-raised);
   box-shadow:
-    0 0 0 3px color-mix(in srgb,var(--accent) 7%,transparent),
-    0 8px 24px rgba(0,0,0,.22);
+    0 0 0 2px color-mix(in srgb,var(--accent) 6%,transparent),
+    0 8px 24px rgba(0,0,0,.20);
 }
 html[data-theme=light] .brand-photo{
   border-color:rgba(20,95,210,.34);
@@ -538,28 +538,28 @@ html[data-theme=light] .brand-photo{
 
 /* About identity portrait */
 .identity-photo{
-  width:79px;
-  height:79px;
-  min-width:79px;
-  flex:0 0 79px;
+  width:88px;
+  height:88px;
+  min-width:88px;
+  flex:0 0 88px;
   display:block;
-  border-radius:50%;
-  background-image:url("../assets/Professional%20image.jpg.jpeg?v=20260924f");
-  background-size:170%;
-  background-position:50% 36%;
+  border-radius:12px;
+  background-image:url("../assets/Professional%20image.jpg.jpeg?v=20260924g");
+  background-size:contain;
+  background-position:center;
   background-repeat:no-repeat;
   border:1px solid var(--line-strong);
   background-color:var(--surface-raised);
   box-shadow:
-    0 0 0 3px color-mix(in srgb,var(--accent) 6%,transparent),
-    0 10px 28px rgba(0,0,0,.18);
+    0 0 0 2px color-mix(in srgb,var(--accent) 6%,transparent),
+    0 10px 28px rgba(0,0,0,.16);
 }
 @media(max-width:800px){
   .identity-photo{
-    width:65px;
-    height:65px;
-    min-width:65px;
-    flex-basis:65px;
+    width:72px;
+    height:72px;
+    min-width:72px;
+    flex-basis:72px;
   }
 }
 
