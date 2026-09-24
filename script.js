@@ -1,521 +1,215 @@
 (() => {
   "use strict";
-  // Small Helper Functions
 
   const root = document.documentElement;
   root.classList.add("js");
 
-  function findElement(selector) {
-    return document.querySelector(selector);
-  }
+  const $ = (selector, context = document) => context.querySelector(selector);
+  const $$ = (selector, context = document) => Array.from(context.querySelectorAll(selector));
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
-  function findAllElements(selector) {
-    return Array.from(document.querySelectorAll(selector));
-  }
-
-  const reducedMotion = window.matchMedia(
-    "(prefers-reduced-motion: reduce)"
-  );
-  // Light / Dark Theme
-
-  const themeButton = findElement("#themeToggle");
-  const themeColorMeta = document.querySelector(
-    'meta[name="theme-color"]'
-  );
+  // Theme
+  const themeButton = $("#themeToggle");
+  const themeIcon = $("#themeIcon");
+  const themeColorMeta = $('meta[name="theme-color"]');
 
   function applyTheme(theme, savePreference = false) {
-    let nextTheme = "dark";
-
-    if (theme === "light") {
-      nextTheme = "light";
-    }
-
+    const nextTheme = theme === "light" ? "light" : "dark";
+    const isLight = nextTheme === "light";
     root.dataset.theme = nextTheme;
     root.style.colorScheme = nextTheme;
 
-    const isLightTheme = nextTheme === "light";
-
     if (themeButton) {
-      themeButton.setAttribute(
-        "aria-pressed",
-        String(isLightTheme)
-      );
-
-      if (isLightTheme) {
-        themeButton.setAttribute(
-          "aria-label",
-          "Switch to dark mode"
-        );
-        themeButton.title = "Switch to dark mode";
-        const themeIcon = findElement("#themeIcon");
-        if (themeIcon) themeIcon.textContent = "☾";
-      } else {
-        themeButton.setAttribute(
-          "aria-label",
-          "Switch to light mode"
-        );
-        themeButton.title = "Switch to light mode";
-        const themeIcon = findElement("#themeIcon");
-        if (themeIcon) themeIcon.textContent = "☀";
-      }
+      themeButton.setAttribute("aria-pressed", String(isLight));
+      themeButton.setAttribute("aria-label", isLight ? "Switch to dark mode" : "Switch to light mode");
+      themeButton.title = isLight ? "Switch to dark mode" : "Switch to light mode";
     }
-
-    if (themeColorMeta) {
-      if (isLightTheme) {
-        themeColorMeta.setAttribute("content", "#f4f7fc");
-      } else {
-        themeColorMeta.setAttribute("content", "#050812");
-      }
-    }
+    if (themeIcon) themeIcon.textContent = isLight ? "☾" : "☀";
+    if (themeColorMeta) themeColorMeta.setAttribute("content", isLight ? "#f4f7fc" : "#050812");
 
     if (savePreference) {
-      try {
-        localStorage.setItem("abb-theme", nextTheme);
-      } catch (error) {
-      }
+      try { localStorage.setItem("abb-theme", nextTheme); } catch (error) {}
     }
   }
 
   let initialTheme = root.dataset.theme || "dark";
-
-  try {
-    initialTheme =
-      localStorage.getItem("abb-theme") || initialTheme;
-  } catch (error) {
-  }
-
+  try { initialTheme = localStorage.getItem("abb-theme") || initialTheme; } catch (error) {}
   applyTheme(initialTheme);
 
   if (themeButton) {
-    themeButton.addEventListener("click", function () {
-      let nextTheme;
-
-      if (root.dataset.theme === "dark") {
-        nextTheme = "light";
-      } else {
-        nextTheme = "dark";
-      }
-
-      applyTheme(nextTheme, true);
+    themeButton.addEventListener("click", () => {
+      applyTheme(root.dataset.theme === "dark" ? "light" : "dark", true);
     });
   }
-  // Mobile Navigation Menu
 
-  const menu = findElement("#mainNav");
-  const menuButton = findElement("#menuButton");
+  // Mobile navigation
+  const menu = $("#mainNav");
+  const menuButton = $("#menuButton");
+  const menuLabel = $("#menuLabel");
 
   function setMenu(openMenu, restoreFocus = false) {
+    if (!menu || !menuButton) return;
     menu.classList.toggle("open", openMenu);
-
-    menuButton.setAttribute(
-      "aria-expanded",
-      String(openMenu)
-    );
-
-    if (openMenu) {
-      findElement("#menuLabel").textContent = "Close";
-    } else {
-      findElement("#menuLabel").textContent = "Menu";
-    }
-
-    if (restoreFocus) {
-      menuButton.focus();
-    }
+    menuButton.setAttribute("aria-expanded", String(openMenu));
+    if (menuLabel) menuLabel.textContent = openMenu ? "Close" : "Menu";
+    if (restoreFocus) menuButton.focus();
   }
 
-  menuButton.addEventListener("click", function () {
-    const isCurrentlyOpen =
-      menuButton.getAttribute("aria-expanded") === "true";
-
-    setMenu(!isCurrentlyOpen);
-  });
-
-  const menuLinks = menu.querySelectorAll("a");
-
-  menuLinks.forEach(function (link) {
-    link.addEventListener("click", function () {
-      setMenu(false);
+  if (menu && menuButton) {
+    menuButton.addEventListener("click", () => {
+      setMenu(menuButton.getAttribute("aria-expanded") !== "true");
     });
-  });
 
-  document.addEventListener("keydown", function (event) {
-    if (
-      event.key === "Escape" &&
-      menu.classList.contains("open")
-    ) {
-      setMenu(false, true);
-    }
-  });
+    $$("a", menu).forEach(link => link.addEventListener("click", () => setMenu(false)));
 
-  const outsideEvents = ["click", "focusin"];
-
-  outsideEvents.forEach(function (eventType) {
-    document.addEventListener(eventType, function (event) {
-      const menuIsOpen = menu.classList.contains("open");
-      const eventIsInsideHeader =
-        event.target.closest(".site-header");
-
-      if (menuIsOpen && !eventIsInsideHeader) {
-        setMenu(false);
-      }
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape" && menu.classList.contains("open")) setMenu(false, true);
     });
-  });
 
-  const mobileMediaQuery =
-    window.matchMedia("(max-width:800px)");
+    ["click", "focusin"].forEach(eventType => {
+      document.addEventListener(eventType, event => {
+        if (menu.classList.contains("open") && !event.target.closest(".site-header")) setMenu(false);
+      });
+    });
 
-  mobileMediaQuery.addEventListener("change", function () {
-    setMenu(false);
-  });
-  // Motion / Animation Control
+    window.matchMedia("(max-width:800px)").addEventListener("change", () => setMenu(false));
+  }
 
+  // Motion control (home page)
+  const motionButton = $("#motionToggle");
+  const motionLabel = $("#motionLabel");
   let pauseRequested = false;
-
-  try {
-    pauseRequested =
-      localStorage.getItem("abb-pause-motion") === "true";
-  } catch (error) {
-    pauseRequested = false;
-  }
-
-  const motionButton = findElement("#motionToggle");
-  motionButton.hidden = false;
+  try { pauseRequested = localStorage.getItem("abb-pause-motion") === "true"; } catch (error) {}
 
   function syncMotion() {
-    const deviceRequestsReducedMotion = reducedMotion.matches;
-    const motionIsPaused =
-      deviceRequestsReducedMotion || pauseRequested;
+    const paused = reducedMotion.matches || pauseRequested;
+    root.classList.toggle("motion-paused", paused);
 
-    root.classList.toggle(
-      "motion-paused",
-      motionIsPaused
-    );
+    if (!motionButton) return;
+    motionButton.hidden = false;
+    motionButton.setAttribute("aria-pressed", String(paused));
+    motionButton.disabled = reducedMotion.matches;
+    motionButton.title = reducedMotion.matches ? "Your device has reduced motion enabled." : "";
 
-    motionButton.setAttribute(
-      "aria-pressed",
-      String(motionIsPaused)
-    );
-
-    if (deviceRequestsReducedMotion) {
-      findElement("#motionLabel").textContent =
-        "Reduced motion";
-    } else if (motionIsPaused) {
-      findElement("#motionLabel").textContent =
-        "Resume motion";
-    } else {
-      findElement("#motionLabel").textContent =
-        "Pause motion";
+    if (motionLabel) {
+      motionLabel.textContent = reducedMotion.matches ? "Reduced motion" : paused ? "Resume motion" : "Pause motion";
     }
 
-    motionButton.disabled = deviceRequestsReducedMotion;
+    const icon = $(".motion-icon", motionButton);
+    if (icon) icon.textContent = paused ? "▷" : "Ⅱ";
 
-    if (deviceRequestsReducedMotion) {
-      motionButton.title =
-        "Your device has reduced motion enabled.";
-    } else {
-      motionButton.title = "";
-    }
-
-    const motionIcon =
-      motionButton.querySelector(".motion-icon");
-
-    if (motionIsPaused) {
-      motionIcon.textContent = "▷";
-    } else {
-      motionIcon.textContent = "Ⅱ";
-    }
-
-    if (motionIsPaused) {
-      const pendingElements =
-        findAllElements(".reveal-pending");
-
-      pendingElements.forEach(function (element) {
-        element.classList.remove("reveal-pending");
-      });
-    }
+    if (paused) $$(".reveal-pending").forEach(element => element.classList.remove("reveal-pending"));
   }
 
-  motionButton.addEventListener("click", function () {
-    pauseRequested = !pauseRequested;
-
-    try {
-      localStorage.setItem(
-        "abb-pause-motion",
-        String(pauseRequested)
-      );
-    } catch (error) {
-    }
-
-    syncMotion();
-  });
+  if (motionButton) {
+    motionButton.addEventListener("click", () => {
+      pauseRequested = !pauseRequested;
+      try { localStorage.setItem("abb-pause-motion", String(pauseRequested)); } catch (error) {}
+      syncMotion();
+    });
+  }
 
   reducedMotion.addEventListener("change", syncMotion);
-
   syncMotion();
 
-  document.addEventListener(
-    "visibilitychange",
-    function () {
-      root.classList.toggle(
-        "tab-inactive",
-        document.hidden
-      );
-    }
-  );
-  // Scroll Reveal Animation
+  document.addEventListener("visibilitychange", () => {
+    root.classList.toggle("tab-inactive", document.hidden);
+  });
 
-  const observerSupported =
-    "IntersectionObserver" in window;
+  // Reveal animation
+  if ("IntersectionObserver" in window && !root.classList.contains("motion-paused")) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.remove("reveal-pending");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.06 });
 
-  const motionIsCurrentlyPaused =
-    root.classList.contains("motion-paused");
-
-  if (observerSupported && !motionIsCurrentlyPaused) {
-    const observer = new IntersectionObserver(
-      function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.remove(
-              "reveal-pending"
-            );
-
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      {
-        threshold: 0.06
-      }
-    );
-
-    const revealElements = findAllElements(".reveal");
-
-    revealElements.forEach(function (element) {
-      const elementTop =
-        element.getBoundingClientRect().top;
-
-      if (elementTop > window.innerHeight) {
-        element.classList.add("reveal-pending");
-      }
-
+    $$(".reveal").forEach(element => {
+      if (element.getBoundingClientRect().top > window.innerHeight) element.classList.add("reveal-pending");
       observer.observe(element);
     });
   }
-  // Project Filtering
 
-  const filterButtons =
-    findAllElements("[data-filter]");
-
-  const projectCards =
-    findAllElements(".project-card");
-
-  findElement(".project-filters").hidden = false;
+  // Project filtering (Work page)
+  const filterButtons = $$("[data-filter]");
+  const projectCards = $$(".project-card");
+  const projectFilters = $(".project-filters");
+  const projectCount = $("#projectCount");
 
   function filterProjects(filterName) {
-    const filterExists = filterButtons.some(
-      function (button) {
-        return button.dataset.filter === filterName;
-      }
-    );
+    if (!filterButtons.length || !projectCards.length) return;
+    if (!filterButtons.some(button => button.dataset.filter === filterName)) return;
 
-    if (!filterExists) {
-      return;
-    }
-
-    let visibleProjectCount = 0;
-
-    projectCards.forEach(function (card) {
-      const categoryMatches =
-        card.dataset.category === filterName;
-
-      const showCard =
-        filterName === "all" || categoryMatches;
-
-      card.hidden = !showCard;
-
-      if (showCard) {
-        visibleProjectCount =
-          visibleProjectCount + 1;
-
+    let visible = 0;
+    projectCards.forEach(card => {
+      const show = filterName === "all" || card.dataset.category === filterName;
+      card.hidden = !show;
+      if (show) {
+        visible += 1;
         card.classList.remove("reveal-pending");
       }
     });
 
-    filterButtons.forEach(function (button) {
-      const isSelected =
-        button.dataset.filter === filterName;
-
-      button.setAttribute(
-        "aria-pressed",
-        String(isSelected)
-      );
+    filterButtons.forEach(button => {
+      button.setAttribute("aria-pressed", String(button.dataset.filter === filterName));
     });
 
-    const paddedCount = String(
-      visibleProjectCount
-    ).padStart(2, "0");
-
-    let projectWord = "PROJECTS";
-
-    if (visibleProjectCount === 1) {
-      projectWord = "PROJECT";
+    if (projectCount) {
+      projectCount.textContent = `${String(visible).padStart(2, "0")} ${visible === 1 ? "PROJECT" : "PROJECTS"}`;
     }
-
-    findElement("#projectCount").textContent =
-      `${paddedCount} ${projectWord}`;
   }
 
-  filterButtons.forEach(function (button) {
-    button.addEventListener("click", function () {
-      filterProjects(button.dataset.filter);
-    });
-  });
+  if (projectFilters && filterButtons.length && projectCards.length) {
+    projectFilters.hidden = false;
+    filterButtons.forEach(button => button.addEventListener("click", () => filterProjects(button.dataset.filter)));
+    const requestedFilter = new URLSearchParams(window.location.search).get("filter");
+    filterProjects(requestedFilter || "all");
+  }
 
-  const researchFilterLinks =
-    findAllElements("[data-research-filter]");
-
-  researchFilterLinks.forEach(function (link) {
-    link.addEventListener("click", function () {
-      filterProjects(link.dataset.researchFilter);
-    });
-  });
-  // Scroll Progress + Active Navigation
-
-  const header = findElement("#siteHeader");
-  const progress = findElement("#scrollProgress");
-
-  const navigationLinks = Array.from(
-    menu.querySelectorAll('a[href^="#"]')
-  );
-
-  const navigationSections =
-    navigationLinks.map(function (link) {
-      const sectionSelector =
-        link.getAttribute("href");
-
-      return findElement(sectionSelector);
-    });
-
+  // Scroll progress and sticky-header state
+  const header = $("#siteHeader");
+  const progress = $("#scrollProgress");
   let scrollUpdateRequested = false;
 
   function syncScroll() {
-    const maximumScroll =
-      document.documentElement.scrollHeight -
-      window.innerHeight;
-
-    let scrollRatio = 0;
-
-    if (maximumScroll > 0) {
-      scrollRatio =
-        window.scrollY / maximumScroll;
-
-      scrollRatio = Math.max(
-        0,
-        Math.min(1, scrollRatio)
-      );
-    }
-
-    progress.style.transform =
-      `scaleX(${scrollRatio})`;
-
-    header.classList.toggle(
-      "scrolled",
-      window.scrollY > 20
-    );
-
-    let currentSectionIndex = -1;
-
-    navigationSections.forEach(
-      function (section, index) {
-        const sectionTop =
-          section.getBoundingClientRect().top;
-
-        if (sectionTop <= 180) {
-          currentSectionIndex = index;
-        }
-      }
-    );
-
-    const pageBottomReached =
-      window.scrollY + window.innerHeight >=
-      document.documentElement.scrollHeight - 3;
-
-    if (pageBottomReached) {
-      currentSectionIndex =
-        navigationLinks.length - 1;
-    }
-
-    navigationLinks.forEach(
-      function (link, index) {
-        if (index === currentSectionIndex) {
-          link.setAttribute(
-            "aria-current",
-            "location"
-          );
-        } else {
-          link.removeAttribute("aria-current");
-        }
-      }
-    );
-
+    const maximumScroll = document.documentElement.scrollHeight - window.innerHeight;
+    const ratio = maximumScroll > 0 ? Math.max(0, Math.min(1, window.scrollY / maximumScroll)) : 0;
+    if (progress) progress.style.transform = `scaleX(${ratio})`;
+    if (header) header.classList.toggle("scrolled", window.scrollY > 20);
     scrollUpdateRequested = false;
   }
 
   function queueScrollUpdate() {
-    if (scrollUpdateRequested) {
-      return;
-    }
-
+    if (scrollUpdateRequested) return;
     window.requestAnimationFrame(syncScroll);
     scrollUpdateRequested = true;
   }
 
-  window.addEventListener(
-    "scroll",
-    queueScrollUpdate,
-    {
-      passive: true
-    }
-  );
-
-  window.addEventListener(
-    "resize",
-    queueScrollUpdate
-  );
-
-  const journeyDetails =
-    document.querySelector("details");
-
-  journeyDetails.addEventListener(
-    "toggle",
-    queueScrollUpdate
-  );
+  window.addEventListener("scroll", queueScrollUpdate, { passive: true });
+  window.addEventListener("resize", queueScrollUpdate);
+  $$("details").forEach(detail => detail.addEventListener("toggle", queueScrollUpdate));
 
   if ("ResizeObserver" in window) {
-    const resizeObserver =
-      new ResizeObserver(queueScrollUpdate);
-
+    const resizeObserver = new ResizeObserver(queueScrollUpdate);
     resizeObserver.observe(document.body);
   }
-
   syncScroll();
-  // Copy Email Button
 
-  const copyButton = findElement("#copyEmail");
+  // Copy email (Contact page)
+  const copyButton = $("#copyEmail");
+  const copyStatus = $("#copyStatus");
   const email = "abdulbasitbehlim3@gmail.com";
 
-  copyButton.hidden = false;
-
-  copyButton.addEventListener(
-    "click",
-    async function () {
+  if (copyButton) {
+    copyButton.hidden = false;
+    copyButton.addEventListener("click", async () => {
       let copied = false;
 
       try {
-        if (
-          navigator.clipboard &&
-          window.isSecureContext
-        ) {
+        if (navigator.clipboard && window.isSecureContext) {
           await navigator.clipboard.writeText(email);
           copied = true;
         }
@@ -524,48 +218,25 @@
       }
 
       if (!copied) {
-        const temporaryTextArea =
-          document.createElement("textarea");
-
+        const temporaryTextArea = document.createElement("textarea");
         temporaryTextArea.value = email;
-        temporaryTextArea.setAttribute(
-          "readonly",
-          ""
-        );
-
-        temporaryTextArea.style.cssText =
-          "position:fixed;left:-9999px;top:0";
-
-        document.body.appendChild(
-          temporaryTextArea
-        );
-
+        temporaryTextArea.setAttribute("readonly", "");
+        temporaryTextArea.style.cssText = "position:fixed;left:-9999px;top:0";
+        document.body.appendChild(temporaryTextArea);
         temporaryTextArea.select();
-
-        try {
-          copied =
-            document.execCommand("copy");
-        } catch (error) {
-          copied = false;
-        }
-
+        try { copied = document.execCommand("copy"); } catch (error) { copied = false; }
         temporaryTextArea.remove();
         copyButton.focus();
       }
 
-      if (copied) {
-        findElement("#copyStatus").textContent =
-          "Email copied. Let’s start a conversation.";
-      } else {
-        findElement("#copyStatus").textContent =
-          `Select and copy the address above: ${email}`;
+      if (copyStatus) {
+        copyStatus.textContent = copied
+          ? "Email copied. Let’s start a conversation."
+          : `Select and copy the address above: ${email}`;
       }
-    }
-  );
-  // Footer Year
+    });
+  }
 
-  const currentYear = new Date().getFullYear();
-
-  findElement("#year").textContent =
-    currentYear;
+  const year = $("#year");
+  if (year) year.textContent = new Date().getFullYear();
 })();
