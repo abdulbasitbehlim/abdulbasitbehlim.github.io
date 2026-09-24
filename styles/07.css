@@ -426,7 +426,7 @@ html[data-theme=light] .main-nav .theme-toggle #themeIcon{color:#315f9e}
   display:block;
   border-radius:50%;
   object-fit:cover;
-  object-position:center 38%;
+  object-position:center;
   border:1px solid color-mix(in srgb,var(--accent) 58%,var(--line));
   background:var(--surface-raised);
   box-shadow:
@@ -543,7 +543,7 @@ html[data-theme=light] .brand-photo{
   display:block;
   border-radius:50%;
   object-fit:cover;
-  object-position:center 38%;
+  object-position:center;
   border:1px solid var(--line-strong);
   background:var(--surface-raised);
   box-shadow:
@@ -557,4 +557,23 @@ html[data-theme=light] .brand-photo{
     min-width:65px;
     flex-basis:65px;
   }
+}
+
+
+/* AB footer logo */
+.footer-logo{
+  width:32px;
+  height:32px;
+  flex:0 0 32px;
+  display:block;
+  object-fit:contain;
+  border-radius:7px;
+  border:1px solid var(--line);
+  box-shadow:0 6px 18px rgba(0,0,0,.18);
+}
+@media(max-width:600px){
+  .footer-logo{width:28px;height:28px;flex-basis:28px}
+}
+@media print{
+  .footer-logo{display:none!important}
 }
