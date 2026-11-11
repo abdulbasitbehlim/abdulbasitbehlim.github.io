@@ -14,7 +14,7 @@
   <a href="https://www.linkedin.com/in/abdulbasitbehlim">LinkedIn</a>
 </p>
 
-# Abdul Basit Behlim — Research Portfolio
+# Abdul Basit Behlim - Research Portfolio
 
 The personal research portfolio of **Abdul Basit Behlim**, Computational Biologist & Bioinformatician, hosted with GitHub Pages.
 
