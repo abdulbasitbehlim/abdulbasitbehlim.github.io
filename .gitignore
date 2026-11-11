@@ -1,0 +1,25 @@
+# Operating system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*~
+
+# Node and build tools (used only for the message inbox)
+node_modules/
+npm-debug.log*
+.wrangler/
+dist/
+
+# Secrets: never commit tokens or local settings
+.env
+.env.*
+.dev.vars
+
+# Logs and temporary files
+*.log
+*.tmp

@@ -34,9 +34,9 @@
   <script>(function(){var t;try{t=localStorage.getItem('abb-theme')}catch(e){}if(t!=='light'&&t!=='dark'){t=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}document.documentElement.dataset.theme=t})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=glass-2">
-  <script src="script.js?v=glass-2" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Space+Grotesk:wght@700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=glass-3">
+  <script src="script.js?v=glass-3" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -66,21 +66,50 @@
 </section>
 
 <section class="section" style="padding-top:0">
-  <div class="wrap"><div class="glass contact-card rv">
-    <p class="label" style="margin-bottom:14px">Email is best</p>
-    <a class="email-big" href="mailto:abdulbasitbehlim3@gmail.com">abdulbasitbehlim3@gmail.com</a>
-    <div class="contact-actions">
-      <a class="btn btn-primary" href="mailto:abdulbasitbehlim3@gmail.com"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Write to me</a>
-      <button class="btn btn-ghost" type="button" data-copy="abdulbasitbehlim3@gmail.com" data-status="#copyStatus" data-done="Email copied." hidden><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg>Copy address</button>
-      <span class="status-text" id="copyStatus" role="status" aria-live="polite"></span>
+  <div class="wrap contact-grid">
+    <div class="glass contact-card rv">
+      <p class="label" style="margin-bottom:14px">Email is best</p>
+      <a class="email-big" href="mailto:abdulbasitbehlim3@gmail.com">abdulbasitbehlim3@gmail.com</a>
+      <div class="contact-actions">
+        <a class="btn btn-primary" href="mailto:abdulbasitbehlim3@gmail.com"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Write to me</a>
+        <button class="btn btn-ghost" type="button" data-copy="abdulbasitbehlim3@gmail.com" data-status="#copyStatus" data-done="Email copied." hidden><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg>Copy address</button>
+        <span class="status-text" id="copyStatus" role="status" aria-live="polite"></span>
+      </div>
+      <div class="inline-links" style="margin-top:28px">
+        <a class="link" href="https://github.com/abdulbasitbehlim" target="_blank" rel="noopener noreferrer">GitHub<svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a>
+        <a class="link" href="https://www.linkedin.com/in/abdulbasitbehlim" target="_blank" rel="noopener noreferrer">LinkedIn<svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a>
+        <a class="link" href="https://orcid.org/0009-0003-5240-5413" target="_blank" rel="noopener noreferrer">ORCID<svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a>
+        <a class="link" href="https://scholar.google.com/citations?hl=en&amp;user=sKZ_zJoAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar<svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a>
+      </div>
     </div>
-    <div class="inline-links" style="margin-top:28px">
-      <a class="link" href="https://github.com/abdulbasitbehlim" target="_blank" rel="noopener noreferrer">GitHub<svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a>
-      <a class="link" href="https://www.linkedin.com/in/abdulbasitbehlim" target="_blank" rel="noopener noreferrer">LinkedIn<svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a>
-      <a class="link" href="https://orcid.org/0009-0003-5240-5413" target="_blank" rel="noopener noreferrer">ORCID<svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a>
-      <a class="link" href="https://scholar.google.com/citations?hl=en&amp;user=sKZ_zJoAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar<svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a>
-    </div>
-  </div></div>
+
+    <form class="glass contact-card message-form rv" id="messageForm" novalidate data-endpoint="" data-email="abdulbasitbehlim3@gmail.com">
+      <p class="label">Or leave a message here</p>
+      <h2 class="h3" style="margin:10px 0 18px">Send me a note</h2>
+      <div class="field">
+        <label for="msgName">Your name</label>
+        <input id="msgName" name="name" type="text" autocomplete="name" maxlength="80" required>
+      </div>
+      <div class="field">
+        <label for="msgEmail">Email <span class="optional">(optional, so I can reply)</span></label>
+        <input id="msgEmail" name="email" type="email" autocomplete="email" maxlength="120">
+      </div>
+      <div class="field">
+        <label for="msgText">Message</label>
+        <textarea id="msgText" name="message" rows="5" maxlength="4000" required></textarea>
+      </div>
+      <div class="field hp" aria-hidden="true">
+        <label for="msgWebsite">Leave this empty</label>
+        <input id="msgWebsite" name="website" type="text" tabindex="-1" autocomplete="off">
+      </div>
+      <p class="form-error" id="msgError" role="alert"></p>
+      <div class="contact-actions" style="margin-top:6px">
+        <button class="btn btn-primary" id="msgSend" type="submit">Send message <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></button>
+        <span class="status-text" id="msgStatus" role="status" aria-live="polite"></span>
+      </div>
+      <p class="form-note" id="msgNote">This opens your email app with the message filled in.</p>
+    </form>
+  </div>
 </section>
 
 <section class="section" aria-labelledby="topicsTitle">
@@ -92,7 +121,7 @@
     <div class="topics rv">
       <div class="topic"><h3>CRISPR guide design</h3><p>Feedback, bug reports or ideas for the gRNA design tools, especially from people using them on real targets.</p></div>
       <div class="topic"><h3>Bioprocess machine learning</h3><p>Soft sensors, batch validation and how models behave when a fermentation run goes wrong.</p></div>
-      <div class="topic"><h3>Phages &amp; endolysins</h3><p>Phage–host prediction, endolysin datasets and protein-sequence representations for AMR research.</p></div>
+      <div class="topic"><h3>Endolysins &amp; AMR</h3><p>Endolysin discovery from metagenomes, host prediction and candidate ranking against ESKAPE pathogens.</p></div>
     </div>
   </div>
 </section>

@@ -261,12 +261,24 @@
     const section = sandCanvas.parentElement;
     const ctx = sandCanvas.getContext("2d");
     const pointer = { x: -9999, y: -9999, active: false };
-    let W = 0, H = 0, grains = [], motes = [], palette = [], frame = null, visible = true, wakeUntil = 0, built = false;
+    const SHADES = 24;
+    let W = 0, H = 0, grains = [], shades = [], motes = [], palette = [], frame = null, visible = true, wakeUntil = 0, built = false;
 
     const readPalette = () => {
       const cs = getComputedStyle(root);
-      const v = n => cs.getPropertyValue(n).trim();
-      palette = [v("--ink") || "#0f172a", v("--accent") || "#2563eb", v("--accent-2") || "#7c3aed", v("--accent-3") || "#0891b2"];
+      const hex = (name, fallback) => {
+        const m = /^#([0-9a-f]{6})$/i.exec(cs.getPropertyValue(name).trim()) || /^#([0-9a-f]{6})$/i.exec(fallback);
+        const n = parseInt(m[1], 16);
+        return [n >> 16, (n >> 8) & 255, n & 255];
+      };
+      // a smooth left-to-right gradient, cut into SHADES steps so grains can be drawn in batches
+      const stops = [hex("--g1", "#0891b2"), hex("--g2", "#2563eb"), hex("--g3", "#7c3aed"), hex("--g4", "#db2777")];
+      palette = Array.from({ length: SHADES }, (_, i) => {
+        const t = (i / (SHADES - 1)) * (stops.length - 1);
+        const a = stops[Math.min(Math.floor(t), stops.length - 2)], b = stops[Math.min(Math.floor(t) + 1, stops.length - 1)];
+        const f = t - Math.min(Math.floor(t), stops.length - 2);
+        return `rgb(${a.map((c, k) => Math.round(c + (b[k] - c) * f)).join(",")})`;
+      });
     };
 
     const build = () => {
@@ -291,19 +303,23 @@
       const data = o.getImageData(0, 0, W, H).data;
       const gap = W < 700 ? 2 : 3;
       const scatter = !built && !motionOff();
+      const nameRect = nameEl.getBoundingClientRect();
+      const x0 = nameRect.left - rect.left, span = Math.max(1, nameRect.width);
       grains = [];
+      shades = Array.from({ length: SHADES }, () => []);
       for (let y = 0; y < H; y += gap) {
         for (let x = 0; x < W; x += gap) {
           if (data[(y * W + x) * 4 + 3] > 128) {
-            const roll = Math.random();
-            grains.push({
+            const shade = Math.max(0, Math.min(SHADES - 1, Math.round(((x - x0) / span) * (SHADES - 1) + (Math.random() - 0.5) * 2.4)));
+            const grain = {
               hx: x + (Math.random() - 0.5), hy: y + (Math.random() - 0.5),
               x: scatter ? Math.random() * W : x, y: scatter ? H + Math.random() * 120 : y,
               vx: 0, vy: 0,
               s: gap === 2 ? 1.1 + Math.random() * 0.9 : 1.3 + Math.random() * 1.3,
-              c: roll < 0.62 ? 0 : roll < 0.8 ? 1 : roll < 0.93 ? 2 : 3,
               k: 0.018 + Math.random() * 0.03,
-            });
+            };
+            grains.push(grain);
+            shades[shade].push(grain);
           }
         }
       }
@@ -312,7 +328,7 @@
       motes = Array.from({ length: count }, () => ({
         x: Math.random() * W, y: Math.random() * H,
         vx: (Math.random() - 0.5) * 0.35, vy: (Math.random() - 0.5) * 0.35,
-        r: 1.2 + Math.random() * 2.6, c: 1 + Math.floor(Math.random() * 3),
+        r: 1.2 + Math.random() * 2.6, c: Math.floor(Math.random() * SHADES),
       }));
       built = true;
       section.classList.toggle("sand-ready", grains.length > 0);
@@ -363,14 +379,15 @@
         if (!moving && (Math.abs(g.vx) > 0.02 || Math.abs(g.hx - g.x) > 0.3 || Math.abs(g.hy - g.y) > 0.3)) moving = true;
       }
       ctx.globalAlpha = 1;
-      for (let c = 0; c < 4; c++) {
+      for (let c = 0; c < SHADES; c++) {
         ctx.fillStyle = palette[c];
-        for (const g of grains) if (g.c === c) ctx.fillRect(g.x, g.y, g.s, g.s);
+        for (const g of shades[c]) ctx.fillRect(g.x, g.y, g.s, g.s);
       }
       return moving;
     };
 
     const loop = () => {
+      if (!built) { frame = null; return; }
       const ambient = !motionOff();
       const moving = step(ambient);
       const keep = visible && !document.hidden && (ambient || moving || performance.now() < wakeUntil);
@@ -391,7 +408,9 @@
     section.addEventListener("pointercancel", leave);
 
     const start = () => { readPalette(); build(); wake(); };
-    const fontsReady = document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve();
+    const fontsReady = document.fonts && document.fonts.load
+      ? document.fonts.load('700 80px "Space Grotesk"').then(() => document.fonts.ready).catch(() => {})
+      : Promise.resolve();
     fontsReady.then(start);
 
     let resizeTimer = null, lastWidth = window.innerWidth;
@@ -526,6 +545,71 @@
       }
     });
   });
+
+  /* ---- Message form (contact): posts to the message inbox, or falls back to email ---- */
+  const form = $("#messageForm");
+  if (form) {
+    const endpoint = (form.dataset.endpoint || "").trim();
+    const fallbackEmail = form.dataset.email;
+    const error = $("#msgError"), status = $("#msgStatus"), note = $("#msgNote"), send = $("#msgSend");
+    const fields = { name: $("#msgName"), email: $("#msgEmail"), message: $("#msgText"), website: $("#msgWebsite") };
+    const sendLabel = send.innerHTML;
+
+    if (endpoint && note) {
+      note.textContent = "Your message is saved privately for me to read, together with your IP address and country so I can tell real messages from spam.";
+    }
+
+    const fail = (text, field) => {
+      error.textContent = text;
+      Object.values(fields).forEach(f => f.removeAttribute("aria-invalid"));
+      if (field) { field.setAttribute("aria-invalid", "true"); field.focus(); }
+    };
+    const openEmail = data => {
+      const body = `${data.message}\n\n— ${data.name}${data.email ? ` (${data.email})` : ""}`;
+      window.location.href = `mailto:${fallbackEmail}?subject=${encodeURIComponent("Message from your website")}&body=${encodeURIComponent(body)}`;
+    };
+
+    form.addEventListener("submit", async event => {
+      event.preventDefault();
+      status.textContent = "";
+      const data = {
+        name: fields.name.value.trim(),
+        email: fields.email.value.trim(),
+        message: fields.message.value.trim(),
+        website: fields.website.value,
+        page: window.location.href,
+      };
+      if (!data.name) return fail("Please add your name.", fields.name);
+      if (data.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) return fail("That email address doesn’t look right.", fields.email);
+      if (data.message.length < 5) return fail("Please write a message.", fields.message);
+      fail("");
+
+      if (!endpoint) {
+        openEmail(data);
+        status.textContent = "Your email app should now be open with the message ready to send.";
+        return;
+      }
+
+      send.disabled = true;
+      send.innerHTML = '<span class="spinner" aria-hidden="true"></span>Sending…';
+      try {
+        const response = await fetch(endpoint, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data),
+        });
+        const result = await response.json().catch(() => ({}));
+        if (!response.ok) throw new Error(result.error || "The message could not be saved.");
+        form.reset();
+        status.textContent = "Message sent. Thank you — I’ll read it soon.";
+      } catch (problem) {
+        fail(`${problem.message || "The message could not be sent."} You can email me instead at ${fallbackEmail}.`);
+      } finally {
+        send.disabled = false;
+        send.innerHTML = sendLabel;
+      }
+    });
+  }
 
   const year = $("#year");
   if (year) year.textContent = new Date().getFullYear();

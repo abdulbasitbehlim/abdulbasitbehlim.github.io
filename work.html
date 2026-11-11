@@ -34,9 +34,9 @@
   <script>(function(){var t;try{t=localStorage.getItem('abb-theme')}catch(e){}if(t!=='light'&&t!=='dark'){t=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}document.documentElement.dataset.theme=t})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=glass-2">
-  <script src="script.js?v=glass-2" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Space+Grotesk:wght@700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=glass-3">
+  <script src="script.js?v=glass-3" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -72,7 +72,7 @@
       <button type="button" data-filter="genome" aria-pressed="false">Genome engineering</button>
       <button type="button" data-filter="bioprocess" aria-pressed="false">Bioprocess</button>
       <button type="button" data-filter="structure" aria-pressed="false">Structure</button>
-      <button type="button" data-filter="phage" aria-pressed="false">Phage AI</button>
+      <button type="button" data-filter="phage" aria-pressed="false">Endolysins</button>
       <span class="label count" id="projectCount" role="status" aria-live="polite">6 projects</span>
     </div>
     <div class="projects">
@@ -136,13 +136,13 @@
           <div class="project-links"><a class="link" href="https://www.linkedin.com/in/abdulbasitbehlim" target="_blank" rel="noopener noreferrer">Research profile<svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 17 17 7"/><path d="M8 7h9v9"/></svg></a></div>
         </div>
       </article>
-      <article class="project rv" id="phage" data-category="phage">
-        <div class="plate"><p class="label">06 · Phage &amp; endolysin AI</p><div class="plate-art"><img src="assets/phage-ui.png" class="spin-phage" alt="Bacteriophage illustration" width="900" height="900" loading="lazy"></div></div>
+      <article class="project rv" id="endolysins" data-category="phage">
+        <div class="plate"><p class="label">06 · Endolysin discovery</p><div class="plate-art"><img src="assets/phage-ui.png" class="spin-phage" alt="Bacteriophage illustration" width="900" height="900" loading="lazy"></div></div>
         <div class="project-body">
-          <p class="pill wip">Research in progress</p>
-          <h2 class="h3">Phage–Host Prediction &amp; Endolysin Intelligence</h2>
-          <p>Developing a computational pipeline from phage/viral sequence discovery and annotation to endolysin identification and host prediction using protein-sequence representations and machine learning.</p>
-          <ul class="tags" aria-label="Technologies"><li>Phage sequences</li><li>Host prediction</li><li>Endolysins</li><li>Protein embeddings</li><li>AMR</li><li>Deep learning</li></ul>
+          <p class="pill wip">MSc dissertation · in progress</p>
+          <h2 class="h3">Endolysin Discovery for ESKAPE Pathogens</h2>
+          <p>My MSc dissertation. Endolysins are phage enzymes that break down bacterial cell walls, a promising alternative to antibiotics. I mine public metagenomic datasets for them using protein language models alongside domain search, predict which bacteria each one targets, and rank 10 to 20 candidates against ESKAPE pathogens using sequence, structure and docking evidence.</p>
+          <ul class="tags" aria-label="Technologies"><li>Metagenomics</li><li>Protein language models</li><li>HMMER</li><li>Host prediction</li><li>AlphaFold / ESMFold</li><li>Docking &amp; MD</li><li>AMR</li></ul>
           <div class="project-links"><a class="link" href="contact.html">Discuss this research<svg class="icon icon-sm" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a></div>
         </div>
       </article>

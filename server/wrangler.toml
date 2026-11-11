@@ -1,0 +1,8 @@
+name = "website-message-inbox"
+main = "worker.js"
+compatibility_date = "2026-01-01"
+
+[vars]
+# The repository that stores messages. Keep it private.
+GITHUB_REPO = "abdulbasitbehlim/website-messages"
+ALLOWED_ORIGIN = "https://abdulbasitbehlim.github.io"
